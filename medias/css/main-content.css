@@ -1,9 +1,9 @@
 .main-content {
     display: flex;
     flex-direction: column;
-
     width: 100%;
-    padding: 0 5vw 100px;
+    padding: 100px 5vw 100px;
+    border-top: 10px solid var(--white-fade-out-border);
 }
 
 .main-content__personal-info {

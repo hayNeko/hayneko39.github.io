@@ -33,7 +33,7 @@ html {
 }
 
 body {
-	font-family: sans-serif;
+	/* font-family: sans-serif; */
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
 	line-height: 1.25;
@@ -51,9 +51,8 @@ body {
 }
 header[class*="header"] {
 	display: flex;
-	font-family: serif;
 	width: 100%;
-	height: 75px;
+	height: max(5%, 60px);
 	position: fixed;
 	background: var(--header-bg);
 	z-index: 99;
@@ -135,7 +134,7 @@ header[class*="header"] h1:hover::after {
 	text-wrap-mode: nowrap;
 	max-height: 50vh;
 	max-width: 25vw;
-	margin: 20vh 0 0 0;
+	margin: 10vh 0 0 0;
 	width: 75px;
 	z-index: 3;
 	position: fixed;
@@ -155,7 +154,7 @@ header[class*="header"] h1:hover::after {
 
 .sidebar .box {
 	display: flex;
-	height: 8%;
+	height: 10%;
 	width: 85%;
 	margin-left: 10px;
 	margin-top: 1.5vh;
@@ -184,7 +183,7 @@ header[class*="header"] h1:hover::after {
 
 .sidebar .box span {
 	position: relative;
-	top: 0;
+	top: 5px;
 	left: 0;
 	font: 500 20px "";
 	opacity: 0;
@@ -203,7 +202,6 @@ header[class*="header"] h1:hover::after {
 
 .sidebar:hover span {
 	opacity: 1;
-	top: 10px;
 	left: 50px;
 }
 
