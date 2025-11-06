@@ -48,8 +48,8 @@
 			<a href="#" class="box" id="album"><i class="fa-solid fa-image"></i><span>album</span></a>
 			<a href="#" class="box" id="about"><i class="fa-solid fa-user"></i><span>about</span></a>
 			<a href="https://github.com/hayNeko" class="box" id="projects" target="_blank"><i class="fa-solid fa-code"></i><span>projects</span></a>
-			<a href="#" class="box" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></a>
 			
+			<button class="box btt" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></button>
 			<button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
 			<button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
 			<button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
@@ -115,6 +115,15 @@
 			</div>
 		</form>
 	</div>
+
+    <div class="contact-methods">
+        <h2>Contact me</h2>
+        <ul>
+            <li><a href="https://www.instagram.com/hayneko_s32/" target="_blank" id="instrgram-link"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+            <li><a href="https://github.com/hayNeko" target="_blank" id="github-link"><i class="fa-brands fa-github"></i>GitHub</a></li>
+            <!-- <li><a href=""></a></li> -->
+        </ul>
+    </div>
 
 </body>
 <script>
@@ -299,6 +308,20 @@
 
     document.addEventListener('beroreunload', function () {
         reset_login_form();
+    });
+
+
+
+    document.querySelector('#contact').addEventListener('click', function () {
+        this.classList.add('active');
+        document.querySelector('.modal-overlay').classList.add('active');
+        document.querySelector('.contact-methods').classList.add('active');
+    });
+
+    document.querySelector('.modal-overlay').addEventListener('click', function () {
+        document.querySelector('.contact-methods').classList.remove('active');
+        document.querySelector('.modal-overlay').classList.remove('active');
+        this.classList.remove('active');
     });
 
 </script>
