@@ -329,7 +329,7 @@ main {
 }
 
 
-@media (max-width: 776px) {
+@media (max-width: 368px) {
 	.width-detection {
 		display: flex;
 		flex-direction: column;
