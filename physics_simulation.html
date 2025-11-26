@@ -3,10 +3,24 @@
 <head>
     <title>Force vs Motion Simulation</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        canvas { border: 1px solid #333; background: #f0f0f0; }
-        .controls { margin-top: 10px; }
-        .readout { margin-top: 10px; font-family: monospace; }
+        @import url("root-theme-colors.css");
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        canvas {
+            border: 1px solid #333;
+            background: var(--bg-secondary);
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        .readout {
+            margin-top: 10px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +40,13 @@
         速度 (v): <span id="velVal">0.00</span> m/s<br>
         位置 (x): <span id="posVal">0.00</span> m
     </div>
+
+    <br>
+    <br>
+
+    <h3>公式</h3>
+
+    <img src="medias/picures/QianJianTec1764155459272.jpg" width="500">
 
     <script>
         const canvas = document.getElementById('simCanvas');
