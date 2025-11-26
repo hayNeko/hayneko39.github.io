@@ -53,6 +53,7 @@
 			<button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
 			<button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
 			<button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
+            <button class="box btt" id="tools"><i class="fa-solid fa-wrench"></i><span>tools</span></button>
 		
 		
 		</section>
@@ -123,6 +124,13 @@
             <li><a href="https://github.com/hayNeko" target="_blank" id="github-link"><i class="fa-brands fa-github"></i>GitHub</a></li>
             <!-- <li><a href=""></a></li> -->
         </ul>
+    </div>
+
+    <div class="useful-tools">
+        <h2>Useful tools</h2>
+        <ol>
+            <li><a href="physics_simulation.html">Block physics simulator</a></li>
+        </ol>
     </div>
 
 </body>
@@ -320,8 +328,15 @@
 
     document.querySelector('.modal-overlay').addEventListener('click', function () {
         document.querySelector('.contact-methods').classList.remove('active');
+        document.querySelector('.useful-tools').classList.remove('active');
         document.querySelector('.modal-overlay').classList.remove('active');
         this.classList.remove('active');
+    });
+
+    document.querySelector('#tools').addEventListener('click', function () {
+        this.classList.add('active');
+        document.querySelector('.modal-overlay').classList.add('active');
+        document.querySelector('.useful-tools').classList.add('active');
     });
 
 </script>
