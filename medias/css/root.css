@@ -1,0 +1,38 @@
+:root {
+    /* general */
+    --general-font-color: #F0F0F0;
+    --main-bg-color: linear-gradient(135deg, #2C3E50 0%, #1e5e68 100%);
+
+    /* transitions */
+    --transition-smooth: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+    --transition-sidebar: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+
+    /* text colors */
+    --text-color-primary: #F0F8F0;
+
+    /* background colors */
+    --sidebar-bg-color: #1E1E1E3F;
+    --sidebar-bg-color-hover: #2D2D2D7F;
+
+    /* dock colors */
+    --dock-bg-color: #2C2C2C8C;
+    --dock-border-color: #5555552E;
+    --dock-shadow-color: #0000002E;
+}
+
+html.light-theme {
+
+
+
+    /* text colors */
+    --text-color-primary: #0D0D0D;
+
+    /* background colors */
+    --sidebar-bg-color: #F0F8F03F;
+    --sidebar-bg-color-hover: #E0E0E07F;
+
+    /* dock colors */
+    --dock-bg-color: #F0F8F03F;
+    --dock-border-color: #E0E0E07F;
+    --dock-shadow-color: #0000002E;
+}

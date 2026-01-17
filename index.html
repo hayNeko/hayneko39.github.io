@@ -6,210 +6,45 @@
 	<meta name="description" content="Hayneko's first blog!">
 	<meta name="keyword" content="Hayneko, blog, web development, haynekogithubio, acg, programmer, hayneko的博客, 博客, 个人网站, 个人博客, 二次元, 动画, 音乐, miku">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+		
 	<title>Hayneko's blog</title>
 	
-    <link rel="icon" href="medias/picures/miku.JPG" sizes="32x32">
+	<link rel="icon" href="medias/picures/miku.JPG" sizes="32x32">
 
-	<!-- base theme color -->
-	<link rel="stylesheet" href="root-theme-colors.css">
-	
+	<!-- css waifu -->
 	<link rel="stylesheet" href="live2dqw/assets/waifu.css">
+
+	<!-- css -->
+	<link rel="stylesheet" href="medias/css/index.css">
+	<link rel="stylesheet" href="medias/css/dock.css">
 	
-	<link rel="stylesheet" href="index-style.css">
-	<link rel="stylesheet" href="medias/css/login-modal-gen.css">
-	<link rel="stylesheet" href="medias/css/main-content-box-gen.css">
-	<link rel="stylesheet" href="medias/css/codesection.css">
-    <link rel="stylesheet" href="medias/css/main-content.css">
-<!--     
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script> -->
 </head>
 <body>
-	<div class="width-detection">
-		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-		<h2>Please <strong>ROTATE</strong> your device to landscape mode.</h2>
-        <h3>If you are using a mobile device, please <strong>zoom out</strong> your browser to see the full content.</h3>
-        <h3>如果你使用手機，請橫置手機以便最大程度以獲得完整內容。</h3>
-	</div>
-	<header class="header">
-		<h1></h1>
-	</header>
+
 <main>
-		<section class="sidebar">
-			<div class="avatar">
-				<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-			</div>
-			<a href="index.html" class="box" id="home"><i class="fa-solid fa-house"></i><span>home</span></a>
-			<a href="#" class="box" id="album"><i class="fa-solid fa-image"></i><span>album</span></a>
-			<a href="#" class="box" id="about"><i class="fa-solid fa-user"></i><span>about</span></a>
-			<a href="https://github.com/hayNeko" class="box" id="projects" target="_blank"><i class="fa-solid fa-code"></i><span>projects</span></a>
-			
-			<button class="box btt" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></button>
-			<button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
-			<button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
-			<button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
-            <button class="box btt" id="tools"><i class="fa-solid fa-wrench"></i><span>tools</span></button>
-		
-		
-		</section>
-		<section class="title">
-			<span class="my_avatar">
-				<div class="glowing_border">
-					<img src="medias/picures/avatar_square.jpg" alt="my avatar" class="protected-media">
-				</div>
-			</span>
-			<header>
-				<h2>Hayden</h2> <br>
-				<h3>Gamer, Programmer, Designer</h3>
-			</header>
-		</section>
-		
-
-<section class="main-content">
-	<section class="main-content__personal-info">
-        <img class="main-content__personal-info__avatar protected-media" src="medias/picures/miku.JPG" alt="avatar">
-		<h2>About me</h2>
-		<p>I am a gamer, programmer, and designer. I love playing video games, watching anime, and designing websites. I am currently learning web development and designing my own projects.</p>
-	</section>
-    <section class="main-content__posts">
-
-    </section>
-    
-	
-
-
-</section>
 
 
 </main>
 
-
-
-
-
-
-
-
-
-
-
-	<button id="back-to-top" title="back to top">
-		<i class="fa fa-angle-up"></i>
-	</button>
-
-	<div class="modal-overlay"></div>
-	<div class="login-modal">
-		<img src="medias/picures/side-picture.jpg" alt="avatar" class="protected-media">
-		<form action="javaScript:get_login()" method="post">
-			<h2 style="margin-bottom: 20px; text-align: center;">Welcome back</h2>
-			<input type="text" placeholder="Username" required>
-			<input type="password" placeholder="Password" required>
-			<button type="submit">Sign in</button>
-			<div class="other_options">
-				<a href="#">Forgot password?</a>
-				<a href="#">Create an account</a>
-			</div>
-		</form>
+<section class="dock">
+	<div class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
+		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
 	</div>
 
-    <div class="contact-methods">
-        <h2>Contact me</h2>
-        <ul>
-            <li><a href="https://www.instagram.com/hayneko_s32/" target="_blank" id="instrgram-link"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-            <li><a href="https://github.com/hayNeko" target="_blank" id="github-link"><i class="fa-brands fa-github"></i>GitHub</a></li>
-            <!-- <li><a href=""></a></li> -->
-        </ul>
-    </div>
+	<p class="dock_boxes" id="home" data-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
+	<p class="dock_boxes" id="album" data-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
+	<p class="dock_boxes" id="about"  data-tooltip="about" onclick="javascript:HandleDockClickEvent_About();"><i class="fa-solid fa-user"></i></p>
+	<p class="dock_boxes" id="projects" data-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
+	<p class="dock_boxes" id="contact" data-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
+	<p class="dock_boxes" id="theme" data-tooltip="switch theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
+	<p class="dock_boxes" id="search" data-tooltip="search" onclick="javascript:HandleDockClickEvent_Search();"><i class="fa-solid fa-magnifying-glass"></i></p>
+	<p class="dock_boxes" id="tools" data-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools();"><i class="fa-solid fa-wrench"></i></p>
+	
+</section>
 
-    <div class="useful-tools">
-        <h2>Useful tools</h2>
-        <ol>
-            <li><a href="physics_simulation.html">方塊運動模擬器</a></li>
-            <li><a href="physics-simulation_Newtoon-second-law.html">牛頓第二定律模擬器</a></li>
-        </ol>
-    </div>
+<!-- waifu -->
 
-</body>
-<script>
-    // media protection
-    const protectedMediaElements = document.querySelectorAll('.protected-media');
-
-    protectedMediaElements.forEach(media => {
-        // disable right-click
-        media.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-
-        // disable drag
-        media.setAttribute('draggable', false);
-        media.addEventListener('dragstart', function (e) {
-            e.preventDefault();
-        });
-
-        // disable copying
-        media.addEventListener('copy', function (e) {
-            e.preventDefault();
-        });
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-            // alert("You are in debug mode.")
-            // e.preventDefault();
-        }
-    });
-
-    const backToTopButton = document.getElementById('back-to-top');
-    
-    window.onscroll = function() {
-        scrollFunction();
-    };
-    
-    function scrollFunction() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    }
-    
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }); 
-
-    let currentTheme = 1;
-
-    const switchThemeButton = document.getElementById('theme');
-    switchThemeButton.addEventListener('click', function() {
-        switchThemeButton.innerHTML = `<i class="fa-solid fa-${currentTheme === 0? 'moon' : 'sun'}"></i><span>switch theme</span>`;
-        currentTheme ^= 1;
-        if (currentTheme === 0) {
-            document.body.classList.add("light-theme")
-        }
-        else if (currentTheme === 1) {
-            document.body.classList.remove("light-theme")
-        }
-        else {
-            ;
-        }
-    });
-
-   
-    
-
-    
-</script>
-
-
-<div class="waifu">
+<!-- <div class="waifu">
     <div class="waifu-tips"></div>
     <canvas id="live2d" class="live2d"></canvas>
     <div class="waifu-tool">
@@ -221,135 +56,162 @@
         <span class="fui-info-circle"></span>
         <span class="fui-cross"></span>
     </div>
-</div>
+</div> -->
 
-<!-- live2d settings -->
- 
-<script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
-<script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
-<script src="live2dqw/assets/waifu-tips.js"></script>
-<script src="live2dqw/assets/live2d.js"></script>
-<script type="text/javascript">
-	/* 可直接修改部分参数 */
-	live2d_settings['modelId'] = 2;                  // 默认模型 ID
-	live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
-	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
-	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
-	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-	live2d_settings['waifuSize'] = '400x350';        // 看板娘大小
-	live2d_settings['waifuTipsSize'] = '280x100';    // 提示框大小
-	live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
-	live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
-	live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
-	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-	live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
-	/* 在 initModel 前添加 */
-	initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
-</script>
+<!-- end waifu -->
 
 
-<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
+</body>
+<!-- dock avatar particle -->
 <script>
-    document.querySelector('#login').addEventListener('click', function (e) {
-        const btn = e.target;
-        const rect = btn.getBoundingClientRect();
-        btn.style.visibility = 'hidden';
+	function createParticles(x, y) {
+		const particleCount = 15;
+		const particleColors = [
+			'#FF6B6B',
+			'#4ECDC4',
+			'#FFD166',
+			'#06D6A0',
+			'#118AB2',
+			'#EF476F',
+			'#073B4C'
+		];
+				
+		for (let i = 0; i < particleCount; i++) {
+			const particle = document.createElement('div');
+			particle.classList.add('particle');
+			
+			const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+			particle.style.backgroundColor = color;
+			
+			const size = Math.random() * 8 + 4; // 4-12px
+			particle.style.width = `${size}px`;
+			particle.style.height = `${size}px`;
+			
+			const angle = Math.random() * Math.PI * 2;
+			const distance = Math.random() * 30 + 10;
+			const startX = x + Math.cos(angle) * distance;
+			const startY = y + Math.sin(angle) * distance;
+			
+			particle.style.left = `${startX}px`;
+			particle.style.top = `${startY}px`;
+			
+			document.body.appendChild(particle);
+			
+			const duration = Math.random() * 1000 + 1000;
+			const endX = startX + (Math.random() - 0.5) * 100;
+			const endY = startY + 200 + Math.random() * 100;
+			
+			particle.animate([
+				{
+					transform: 'translate(0, 0) scale(1)',
+					opacity: 1
+				},
+				{
+					transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0.1)`,
+					opacity: 0
+				}
+			], {
+				duration: duration,
+				easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)',
+				fill: 'forwards'
+			});
+			
+			setTimeout(() => {
+				if (particle.parentNode) {
+					particle.parentNode.removeChild(particle);
+				}
+			}, duration);
+		}
+		console.log("created");
+	}
+		
+	function HandleDockClickEvent_EmmitParticle() {
+		const avatar = document.getElementById('avatar');
 
-        // // 计算相对视口的绝对位置
-        // const startX = rect.left + window.scrollX;
-        // const startY = rect.top + window.scrollY;
-
-        // // 创建动画按钮副本
-        const cloneBtn = btn.cloneNode(true);
-        cloneBtn.classList.add('login-btn-animate');
-
-
-        // 使用requestAnimationFrame确保流畅动画
-        requestAnimationFrame(() => {
-            // 动画完成后显示模态框
-            setTimeout(() => {
-                document.querySelector('.login-modal').classList.add('active');
-                document.querySelector('.modal-overlay').classList.add('active');
-                cloneBtn.remove();
-                btn.style.visibility = 'visible';
-            }, 1);
-        });
-    });
-
-    // 关闭模态框时恢复滚动
-    document.querySelector('.modal-overlay').addEventListener('click', function () {
-        document.querySelector('.login-modal').classList.remove('active');
-        this.classList.remove('active');
-    });
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            document.querySelector('.login-modal').classList.remove('active');
-            document.querySelector('.modal-overlay').classList.remove('active');
-        }
-    })
-
-
-    function get_login() {
-
-        const username = document.querySelector('input[type="text"]').value;
-        const password = document.querySelector('input[type="password"]').value;
-        console.log(username, password);
-
-        //check login
-        if (username === 'haynekogithubio' && password === 'haynekogithubio') {
-            alert('Login success!');
-            reset_login_form();
-
-            window.location.href = 'index.html';
-        } else {
-            alert('Login failed, please check your username and password.');
-        }
-    }
-
-    // 重载或刷新页面时关闭模态框，清除过往登录框内的输入内容
-
-    function reset_login_form() {
-        document.querySelector('.login-modal').classList.remove('active');
-        document.querySelector('.modal-overlay').classList.remove('active');
-        document.querySelector('input[type="text"]').value = '';
-        document.querySelector('input[type="password"]').value = '';
-    };
-
-    document.addEventListener('beroreunload', function () {
-        reset_login_form();
-    });
-
-
-
-    document.querySelector('#contact').addEventListener('click', function () {
-        this.classList.add('active');
-        document.querySelector('.modal-overlay').classList.add('active');
-        document.querySelector('.contact-methods').classList.add('active');
-    });
-
-    document.querySelector('.modal-overlay').addEventListener('click', function () {
-        document.querySelector('.contact-methods').classList.remove('active');
-        document.querySelector('.useful-tools').classList.remove('active');
-        document.querySelector('.modal-overlay').classList.remove('active');
-        this.classList.remove('active');
-    });
-
-    document.querySelector('#tools').addEventListener('click', function () {
-        this.classList.add('active');
-        document.querySelector('.modal-overlay').classList.add('active');
-        document.querySelector('.useful-tools').classList.add('active');
-    });
-
+		console.log("clicked");
+		
+		avatar.classList.add('clicked');
+		
+		const rect = avatar.getBoundingClientRect();
+		const centerX = rect.left + rect.width / 2;
+		const centerY = rect.top + rect.height / 2;
+		
+		createParticles(centerX, centerY);
+		
+		setTimeout(() => {
+			avatar.classList.remove('clicked');
+		}, 300);
+	}
 </script>
+<!-- end dock avatar particle -->
 
-<!-- show personal-info -->
+<!-- dock links handler -->
 <script>
-	
+	function HandleDockClickEvent_EmmitParticle() {
+		// Emmit some particle effects when clicking the avatar
+		const avatar = document.getElementById('avatar');
+		avatar.classList.add('clicked');
+		setTimeout(() => {
+			avatar.classList.remove('clicked');
+		}, 300);
+
+	}
+
+	function HandleDockClickEvent_Home() {
+		window.location.href = "index.html";
+	}
+	function HandleDockClickEvent_Album() {
+		// window.location.href = "#";
+	}
+	function HandleDockClickEvent_About() {
+		// window.location.href = "#";
+	}
+	function HandleDockClickEvent_Projects() {
+		window.open("https://github.com/hayNeko", "_blank");
+	}
+	function HandleDockClickEvent_Contact() {
+		// window.location.href = "#";
+	}
+	function HandleDockClickEvent_Theme() {
+		SwitchTheme();
+		console.log("Theme switched!");
+	}
+	function HandleDockClickEvent_Search() {
+		// window.location.href = "#";
+	}
+	function HandleDockClickEvent_Tools() {
+		// window.location.href = "#";
+	}
 </script>
+<!-- end dock links handler -->
 
-<!-- change html title when visibility changes -->
+<!-- theme switcher -->
 <script>
+	let current_theme = 0;       // 0: dark, 1: light
+	const switchThemeButton = document.getElementById('theme');
 
+	function SwitchTheme() {
+		if (current_theme === 0) {
+			document.documentElement.classList.add("light-theme")
+			current_theme = 1;
+			switchThemeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+			// alert("Switched to light theme!");
+		}
+		else if (current_theme === 1) {
+			document.documentElement.classList.remove("light-theme")
+			current_theme = 0;
+			switchThemeButton.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+		}
+		else {
+			document.documentElement.classList.add("light-theme")
+			current_theme = 1;
+		}
+	}
+</script>
+<!-- end theme switcher -->
+
+<!-- title -->
+<script>
     let originalTitle = document.title;
 
     document.addEventListener('visibilitychange', function () {
@@ -361,4 +223,35 @@
     });
 
 </script>
+<!-- end title -->
+
+<!-- live-2d -->
+<!-- <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
+<script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
+<script src="live2dqw/assets/waifu-tips.js"></script>
+<script src="live2dqw/assets/live2d.js"></script>
+<script type="text/javascript">
+	/* 可直接修改部分参数 */
+	live2d_settings['modelId'] = 2;                  // 默认模型 ID
+	live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+	live2d_settings['waifuSize'] = '350x300';        // 看板娘大小
+	live2d_settings['waifuTipsSize'] = '300x120';    // 提示框大小
+	live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
+	live2d_settings['waifuToolFont'] = '20px';       // 工具栏字体
+	live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
+	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+	live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
+	/* 在 initModel 前添加 */
+	initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
+</script> -->
+<!-- end live-2d -->
+
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
+<!-- end fontawesome -->
+
+
 </html>

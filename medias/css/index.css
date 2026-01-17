@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	min-width: 100vw;
+	font-family: monospace, 'Courier New', Courier;
+}
+
+body {
+	z-index: 0;
+}
