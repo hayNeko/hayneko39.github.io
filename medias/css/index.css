@@ -13,7 +13,16 @@ a {
 html {
 	scroll-behavior: smooth;
 	min-width: 100vw;
-	font-family: h-sans-serif, sans-serif;
+	font-family: eng-sans-serif, sans-serif;
+}
+html:lang(zh-CN) {
+	font-family: zh-sans-serif, sans-serif;
+}
+html:lang(zh-TW) {
+	font-family: zh-sans-serif, sans-serif;
+}
+html:lang(ja) {
+	font-family: jp-sans-serif, sans-serif;
 }
 
 body {

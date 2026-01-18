@@ -57,8 +57,25 @@ html.light-theme {
 }
 
 @font-face {
-	font-family: h-sans-serif;
+	font-family: eng-sans-serif;
 	src: url(../fonts/PatuaOne-Regular.ttf);
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: zh-sans-serif;
+	src: url(../fonts/WenYuanSerifSCC-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: jp-sans-serif;
+	src: url(../fonts/07yasashisa.ttf);
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
