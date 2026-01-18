@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5501
+	"liveServer.settings.port": 5567,
+	"editor.fontFamily": "\"Cascadia Code NF\", 'Microsoft Yahei', monospace"
 }

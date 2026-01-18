@@ -1,14 +1,22 @@
+@import url("root.css");
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+	color: var(--text-anchor-color);
+}
+
 html {
 	scroll-behavior: smooth;
 	min-width: 100vw;
-	font-family: monospace, 'Courier New', Courier;
+	font-family: h-sans-serif, sans-serif;
 }
 
 body {
-	z-index: 0;
+	z-index: var(--index-base);
+	background-color: var(--html-bg-color);
 }

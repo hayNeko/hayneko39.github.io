@@ -2,209 +2,223 @@
 
 /* macOS Dock Style Sidebar */
 .dock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--dock-bg-color);
-    border-radius: 50px;
-    transition: var(--transition-sidebar);
-    cursor: pointer;
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1024;
-    color: var(--text-color-primary);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid var(--dock-border-color);
-    box-shadow: 
-        0 10px 40px var(--dock-shadow-color),
-        inset 0 1px 0 #FFFFFF7F;
-    padding: 12px 20px;
-    min-width: auto;
-    max-width: 90%;
-    height: 50px;
-    overflow: visible;
-    gap: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--dock-bg-color);
+	border-radius: 50px;
+	transition: var(--transition-sidebar);
+	cursor: pointer;
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: var(--index-very-top);
+	color: var(--text-color-primary);
+	backdrop-filter: blur(20px) saturate(180%);
+	-webkit-backdrop-filter: blur(20px) saturate(180%);
+	border: 1px solid var(--dock-border-color);
+	box-shadow: 
+		0 10px 40px var(--dock-shadow-color),
+		inset 0 1px 0 #FFFFFF7F;
+	padding: 12px 20px;
+	min-width: auto;
+	max-width: 90%;
+	height: 50px;
+	overflow: visible;
+	gap: 8px;
 }
 
 .dock:hover {
-    width: auto;
-    background-color: var(--dock-bg-color);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+	width: auto;
+	background-color: var(--dock-bg-color);
+	backdrop-filter: blur(20px) saturate(180%);
+	-webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dock_avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-smooth);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition-smooth);
 	padding-right: 5px;
-    order: -1;
+	order: -1;
 }
 
 .dock_avatar.clicked img {
-    animation: avatarClick 0.3s ease;
+	animation: avatarClick 0.3s ease;
 }
 
 @keyframes avatarClick {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 .dock_avatar img {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #FFFFFF1F;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px #FFFFFF1F;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid #FFFFFF1F;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px #FFFFFF1F;
 }
 
 .dock_boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 56px;
-    width: 56px;
-    position: relative;
-    border-radius: 14px;
-    transition: var(--transition-smooth);
-    color: var(--text-color-primary);
-    margin: 0 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 56px;
+	width: 56px;
+	position: relative;
+	border-radius: 14px;
+	transition: var(--transition-smooth);
+	color: var(--text-color-primary);
+	margin: 0 4px;
 }
 
 .dock_boxes i {
-    font-size: 1.6rem;
-    transition: var(--transition-smooth);
+	font-size: 1.6rem;
+	transition: var(--transition-smooth);
 }
 
 .dock_boxes:hover {
-    transform: scale(1.1) translateY(-2px);
+	transform: scale(1.1) translateY(-2px);
 }
 
 .dock_boxes:hover i {
-    transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .dock_boxes::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -30px;
-    color: var(--text-color-primary);
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: 1001;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: 60px;
+	color: var(--text-color-primary);
+	padding: 6px 12px;
+	border-radius: 16px;
+	font-size: 0.85rem;
+	font-weight: 500;
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	pointer-events: none;
+	z-index: calc(var(--index-very-top)+1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 .dock_boxes:hover::after {
-    opacity: 1;
+	opacity: 1;
 	background: var(--dock-bg-color);
-    transform: translateY(0);
+	transform: translateY(0);
 }
 
 .dock_boxes.active::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    width: 4px;
-    height: 4px;
-    background-color: #4A9EFF;
-    border-radius: 50%;
-    opacity: 0.8;
+	content: '';
+	position: absolute;
+	top: -8px;
+	width: 4px;
+	height: 4px;
+	background-color: #4A9EFF;
+	border-radius: 50%;
+	opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-    .dock {
-        height: 70px;
-        padding: 10px 15px;
-        bottom: 20px;
-        border-radius: 20px;
-    }
-    
-    .dock_boxes {
-        height: 50px;
-        width: 50px;
-        margin: 0 3px;
-    }
-    
-    .dock_boxes i {
-        font-size: 1.4rem;
-    }
-    
-    .dock_avatar img {
-        width: 48px;
-        height: 48px;
-    }
+	.dock {
+		height: 75px;
+		padding: 10px 15px;
+		bottom: 20px;
+		border-radius: 20px;
+		width: 90vw;
+	}
+	
+	.dock_boxes {
+		height: 50px;
+		width: 50px;
+		margin: 0 3px;
+	}
+
+	.dock_boxes::after {
+		content: attr(data-tooltip);
+		bottom: -15px;
+		font-size: 0.5rem;
+		opacity: 1;
+	}
+	
+	.dock_boxes i {
+		font-size: 1.4rem;
+		padding-bottom: 5px;
+	}
+	
+	.dock_avatar img {
+		width: 48px;
+		height: 48px;
+	}
+
 }
 
 .dock_particle {
-    position: fixed;
-    pointer-events: none;
-    border-radius: 50%;
-    z-index: 1030;
-    opacity: 0.8;
+	position: fixed;
+	pointer-events: none;
+	border-radius: 50%;
+	z-index: calc(var(--index-overlay));
+	opacity: 0.8;
 }
 
 @media (max-width: 480px) {
-    .dock {
-        height: 65px;
-        padding: 8px 12px;
-        bottom: 15px;
-        border-radius: 18px;
-        max-width: 95%;
-    }
-    
-    .dock_boxes {
-        height: 48px;
-        width: 48px;
-        margin: 0 2px;
-    }
-    
-    .dock_boxes i {
-        font-size: 1.3rem;
-    }
-    
-    .dock_avatar img {
-        width: 44px;
-        height: 44px;
-    }
+	.dock {
+		height: 65px;
+		padding: 8px 12px;
+		bottom: 15px;
+		border-radius: 18px;
+		max-width: 95%;
+	}
+	
+	.dock_boxes {
+		height: 48px;
+		width: 48px;
+		margin: 0 2px;
+	}
+	
+	.dock_boxes i {
+		font-size: 1.3rem;
+	}
+	
+	.dock_avatar img {
+		width: 44px;
+		height: 44px;
+	}
 }
 
 @keyframes DockIconAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+	0% {
+		opacity: 0;
+		transform: translateY(20px) scale(0.8);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(-5px) scale(1.05);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 @keyframes DockExtend {
 	0% {
-		transform: translate(-50%) scale(0.01);
+		transform: translate(-50%, 100px) scale(0.01);
 	}
 	100% {
 		width: auto;
@@ -212,15 +226,16 @@
 	}
 }
 
-.dock { animation: DockExtend 0.3s ease 0s both; }
+.dock { animation: DockExtend 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s both; }
 
-.dock_boxes:nth-child(1) { animation: DockIconAppear 0.3s ease 0.3s both; }
-.dock_boxes:nth-child(2) { animation: DockIconAppear 0.3s ease 0.35s both; }
-.dock_boxes:nth-child(3) { animation: DockIconAppear 0.3s ease 0.4s both; }
-.dock_boxes:nth-child(4) { animation: DockIconAppear 0.3s ease 0.45s both; }
-.dock_boxes:nth-child(5) { animation: DockIconAppear 0.3s ease 0.5s both; }
-.dock_boxes:nth-child(6) { animation: DockIconAppear 0.3s ease 0.55s both; }
-.dock_boxes:nth-child(7) { animation: DockIconAppear 0.3s ease 0.6s both; }
-.dock_boxes:nth-child(8) { animation: DockIconAppear 0.3s ease 0.65s both; }
-.dock_boxes:nth-child(9) { animation: DockIconAppear 0.3s ease 0.7s both; }
-.dock_avatar { animation: DockIconAppear 0.3s ease 0.05s both; }
+.dock_boxes:nth-child(1) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.3s both; }
+.dock_boxes:nth-child(2) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.35s both; }
+.dock_boxes:nth-child(3) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.4s both; }
+.dock_boxes:nth-child(4) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.45s both; }
+.dock_boxes:nth-child(5) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.5s both; }
+.dock_boxes:nth-child(6) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.55s both; }
+.dock_boxes:nth-child(7) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.6s both; }
+.dock_boxes:nth-child(8) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.65s both; }
+.dock_boxes:nth-child(9) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.7s both; }
+.dock_boxes:nth-child(10) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.75s both; }
+/* .dock_avatar { animation: DockIconAppear 0.3s ease 0.05s both; } */

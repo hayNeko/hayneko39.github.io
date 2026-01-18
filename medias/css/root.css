@@ -3,16 +3,28 @@
     --general-font-color: #F0F0F0;
     --main-bg-color: linear-gradient(135deg, #2C3E50 0%, #1e5e68 100%);
 
+	/* z index */
+	--index-base: -1;
+	--index-very-bottom: 0;
+	--index-bottom: 1;
+	--index-middle: 5;
+	--index-top: 10;
+	--index-very-top: 20;
+	--index-overlay: 1024;
+
     /* transitions */
     --transition-smooth: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
     --transition-sidebar: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
 
     /* text colors */
     --text-color-primary: #F0F8F0;
+	--text-anchor-color: #1E90FF;
 
     /* background colors */
     --sidebar-bg-color: #1E1E1E3F;
     --sidebar-bg-color-hover: #2D2D2D7F;
+	--selection: #52d3dc;
+	--html-bg-color: #07080F;
 
     /* dock colors */
     --dock-bg-color: #2C2C2C8C;
@@ -26,13 +38,27 @@ html.light-theme {
 
     /* text colors */
     --text-color-primary: #0D0D0D;
+	--text-anchor-color: #0000ba;
 
     /* background colors */
     --sidebar-bg-color: #F0F8F03F;
     --sidebar-bg-color-hover: #E0E0E07F;
+	--selection: #b4c6fd;
+	--html-bg-color: #EDEFFA;
 
     /* dock colors */
     --dock-bg-color: #F0F8F03F;
     --dock-border-color: #E0E0E07F;
     --dock-shadow-color: #0000002E;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+@font-face {
+	font-family: h-sans-serif;
+	src: url(../fonts/PatuaOne-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
 }

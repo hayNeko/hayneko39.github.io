@@ -1,0 +1,75 @@
+{
+	"en": {
+		"name": "English",
+		"translations": {
+			"home": "Home",
+			"album": "Album",
+			"about": "About",
+			"projects": "Projects",
+			"contact": "Contact",
+			"language": "Language",
+			"switch theme": "Theme",
+			"search": "Search",
+			"tools": "Tools",
+			"title": "Hayneko's Blog",
+			"title_leave-message": "Miku! Come back soon to ",
+
+			"construction": "NEW SITE IS UNDER CONSTRUCTION"
+		}
+	},
+	"zh-CN": {
+		"name": "简体中文",
+		"translations": {
+			"home": "首页",
+			"album": "相册",
+			"about": "关于",
+			"projects": "项目",
+			"contact": "联系",
+			"language": "语言",
+			"switch theme": "主题",
+			"search": "搜索",
+			"tools": "工具",
+			"title": "Hayneko的博客",
+			"title_leave-message": "Miku! Come back soon to ",
+
+			"construction": "新网站建设中"
+		}
+	},
+	"zh-TW": {
+		"name": "繁體中文",
+		"translations": {
+			"home": "首頁",
+			"album": "相簿",
+			"about": "關於",
+			"projects": "專案",
+			"contact": "聯絡",
+			"language": "語言",
+			"switch theme": "主題",
+			"search": "搜尋",
+			"tools": "工具",
+			"title": "Hayneko的部落格",
+			"title_leave-message": "Miku! Come back soon to ",
+
+			"construction": "新網站建設中"
+		}
+	},
+	"ja": {
+		"name": "日本語",
+		"translations": {
+			"home": "ホーム",
+			"album": "アルバム",
+			"about": "約",
+			"projects": "プロジェクト",
+			"contact": "連絡先",
+			"language": "言語",
+			"switch theme": "テーマ",
+			"search": "検索",
+			"tools": "ツール",
+			"title": "Haynekoのブログ",
+			"title_leave-message": "Miku! Come back soon to ",
+
+			"construction": "新しいサイトは建設中です"
+		}
+	},
+	"languages": ["en", "zh-CN", "zh-TW", "ja"]
+}
