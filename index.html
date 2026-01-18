@@ -31,16 +31,16 @@
 		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
 	</div>
 
-	<p class="dock_boxes" id="home" data-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
-	<p class="dock_boxes" id="album" data-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
-	<p class="dock_boxes" id="about"  data-tooltip="about" onclick="javascript:HandleDockClickEvent_About();"><i class="fa-solid fa-user"></i></p>
-	<p class="dock_boxes" id="projects" data-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
-	<p class="dock_boxes" id="contact" data-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
-	<p class="dock_boxes" id="language" data-tooltip="language" onclick="javascript:HandleDockClickEvent_Language();"><i class="fa-solid fa-globe"></i></p>
-	<p class="dock_boxes" id="theme" data-tooltip="switch theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
-	<p class="dock_boxes" id="search" data-tooltip="search" onclick="javascript:HandleDockClickEvent_Search();"><i class="fa-solid fa-magnifying-glass"></i></p>
-	<p class="dock_boxes" id="tools" data-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools();"><i class="fa-solid fa-wrench"></i></p>
-	
+	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
+	<p class="dock_boxes" id="album" data-i18n-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
+	<p class="dock_boxes" id="about"  data-i18n-tooltip="about" onclick="javascript:HandleDockClickEvent_About();"><i class="fa-solid fa-user"></i></p>
+	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
+	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
+	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language();"><i class="fa-solid fa-globe"></i></p>
+	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
+	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search();"><i class="fa-solid fa-magnifying-glass"></i></p>
+	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools();"><i class="fa-solid fa-wrench"></i></p>
+
 </section>
 
 <!-- waifu -->
@@ -68,9 +68,6 @@
 	document.addEventListener('DOMContentLoaded', async function() {
 	// 初始化语言系统
 	await InitializeLanguageSystem();
-	
-	
-	console.log('页面初始化完成');
 	});
 </script>
 <!-- end DOM loaded -->
@@ -104,7 +101,6 @@
 		const oldLang = LanguageManager.currentLanguage;
 		const newLang = LanguageManager.SwitchToNextLanguage();
 		UpdatePageLanguage();
-		location.reload();
 	}
 	function HandleDockClickEvent_Theme() {
 		SwitchTheme();
@@ -130,17 +126,26 @@
 
 <!-- title -->
 <script>
-    let originalTitle = document.title;
-	let langData = LanguageManager.GetCurrentLanguageData();
-	let leaveMessage = langData.translations['title_leave-message'] || "Miku! ";
+	let originalTitle = document.title;
+	let leaveMessage = "Miku! ";
 
-    document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-            document.title = " (>_<) " + leaveMessage + originalTitle;
-        } else {
-            document.title = originalTitle;
-        }
-    });
+	document.addEventListener('DOMContentLoaded', async function() {
+		// 等待语言系统初始化
+		await InitializeLanguageSystem();
+		
+		// 获取当前语言的离开消息
+		const langData = LanguageManager.GetCurrentLanguageData();
+		leaveMessage = langData.translations['title_leave-message'] || "Miku! ";
+		originalTitle = langData.translations['title'] || originalTitle;
+	});
+
+	document.addEventListener("visibilitychange", function () {
+		if (document.hidden) {
+			document.title = " (>_<) " + leaveMessage + originalTitle;
+		} else {
+			document.title = originalTitle;
+		}
+	});
 
 </script>
 <!-- end title -->

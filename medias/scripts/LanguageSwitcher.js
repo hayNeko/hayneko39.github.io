@@ -123,10 +123,20 @@ async function InitializeLanguageSystem() {
 function UpdatePageLanguage() {
 	const langData = LanguageManager.GetCurrentLanguageData();
 	
-	document.querySelectorAll('[data-tooltip]').forEach(element => {
-		const key = element.getAttribute('data-tooltip');
-		if (langData.translations[key]) {
-			element.setAttribute('data-tooltip', langData.translations[key]);
+	// document.querySelectorAll('[data-tooltip]').forEach(element => {
+	// 	const key = element.getAttribute('data-tooltip');
+	// 	if (langData.translations[key]) {
+	// 		element.setAttribute('data-tooltip', langData.translations[key]);
+	// 	}
+	// });
+
+	// data-i18n-tooltip elements
+	document.querySelectorAll('[data-i18n-tooltip]').forEach(element => {
+		const key = element.getAttribute('data-i18n-tooltip');
+		const translation = langData.translations[key];
+		if (translation) {
+			// 将翻译设置到 data-tooltip 属性，因为 CSS 使用这个属性
+			element.setAttribute('data-tooltip', translation);
 		}
 	});
 	
@@ -179,10 +189,8 @@ function UpdatePageLanguage() {
 			element.setAttribute('alt', translation);
 		}
 	});
-	
+
 	localStorage.setItem('siteLanguage', LanguageManager.currentLanguage);
 	document.documentElement.lang = LanguageManager.currentLanguage;
-	// reload the page to apply language changes
-	// location.reload();
 }
 
