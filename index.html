@@ -8,6 +8,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
 	<title>Hayneko's blog</title>
+
+	<link rel="manifest" href="manifest.json">
+	
+	<!-- 对于 iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	
 	<link rel="icon" href="medias/picures/miku.JPG" sizes="32x32">
 
@@ -71,6 +77,26 @@
 	});
 </script>
 <!-- end DOM loaded -->
+
+<!-- service worker -->
+<script>
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+		// 获取正确的 Service Worker 路径
+		const swPath = window.location.pathname.includes('/repo-name/') ? '/repo-name/service-worker.js' : '/service-worker.js';
+		
+		navigator.serviceWorker.register(swPath)
+			.then(function(registration) {
+				console.log('ServiceWorker registration successful');
+			})
+			.catch(function(err) {
+				console.log('ServiceWorker registration failed: ', err);
+			});
+	});
+}
+</script>
+
+<!-- end service worker -->
 
 <!-- dock avatar particle -->
 <script src="medias/scripts/CreateParticle.js"></script>
