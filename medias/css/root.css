@@ -1,7 +1,7 @@
 :root {
-    /* general */
-    --general-font-color: #F0F0F0;
-    --main-bg-color: linear-gradient(135deg, #2C3E50 0%, #1e5e68 100%);
+	/* general */
+	--general-font-color: #F0F0F0;
+	--main-bg-color: linear-gradient(135deg, #2C3E50 0%, #1E5E68 100%);
 
 	/* z index */
 	--index-base: -1;
@@ -11,49 +11,97 @@
 	--index-top: 10;
 	--index-very-top: 20;
 	--index-overlay: 1024;
+	--index-transition-overlay: 2048;
 
-    /* transitions */
-    --transition-smooth: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
-    --transition-sidebar: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+	/* transitions */
+	--transition-smooth: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+	--transition-sidebar: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
 
-    /* text colors */
-    --text-color-primary: #F0F8F0;
+	/* text colors */
+	--text-color-primary: #F0F8F0;
 	--text-anchor-color: #1E90FF;
 
-    /* background colors */
-    --sidebar-bg-color: #1E1E1E3F;
-    --sidebar-bg-color-hover: #2D2D2D7F;
+	/* background colors */
+	--sidebar-bg-color: #1E1E1E3F;
+	--sidebar-bg-color-hover: #2D2D2D7F;
 	--selection: #52d3dc;
 	--html-bg-color: #07080F;
 
-    /* dock colors */
-    --dock-bg-color: #2C2C2C8C;
-    --dock-border-color: #5555552E;
-    --dock-shadow-color: #0000002E;
+	/* dock colors */
+	--dock-bg-color: #2C2C2C8C;
+	--dock-border-color: #5555552E;
+	--dock-shadow-color: #0000002E;
+
+	/* theme switch */
+	--dark-bg-start: #07080F;
+	/* --dark-bg-end: #1A1B2E; */
+	--dark-bg-end: #07080F;
+
+	/* theme switch light*/
+	--light-bg-start: #EDEFFA;
+	/* --light-bg-end: #F5F7FF; */
+	--light-bg-end: #EDEFFA;
 }
 
 html.light-theme {
 
 
 
-    /* text colors */
-    --text-color-primary: #0D0D0D;
-	--text-anchor-color: #0000ba;
+	/* text colors */
+	--text-color-primary: #0D0D0D;
+	--text-anchor-color: #0000BA;
 
-    /* background colors */
-    --sidebar-bg-color: #F0F8F03F;
-    --sidebar-bg-color-hover: #E0E0E07F;
+	/* background colors */
+	--sidebar-bg-color: #F0F8F03F;
+	--sidebar-bg-color-hover: #E0E0E07F;
 	--selection: #b4c6fd;
 	--html-bg-color: #EDEFFA;
 
-    /* dock colors */
-    --dock-bg-color: #F0F8F03F;
-    --dock-border-color: #E0E0E07F;
-    --dock-shadow-color: #0000002E;
+	/* dock colors */
+	--dock-bg-color: #F0F8F03F;
+	--dock-border-color: #E0E0E07F;
+	--dock-shadow-color: #0000002E;
+
+	/* theme switch */
+	--dark-bg-start: #07080F;
+	/* --dark-bg-end: #1A1B2E; */
+	--dark-bg-end: #07080F;
+
+	/* theme switch light*/
+	--light-bg-start: #EDEFFA;
+	/* --light-bg-end: #F5F7FF; */
+	--light-bg-end: #EDEFFA;
+
 }
 
 ::-webkit-scrollbar {
 	display: none;
+}
+
+.theme-transition-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	z-index: 9999;
+	pointer-events: none;
+	opacity: 0;
+	transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1), 
+				opacity 0.5s ease;
+}
+
+.theme-transition-overlay.active {
+	height: 100vh;
+	opacity: 1;
+}
+
+body.theme-transitioning {
+	pointer-events: none;
+}
+
+body.theme-transitioning * {
+	pointer-events: none !important;
 }
 
 @font-face {
