@@ -27,6 +27,69 @@
 </head>
 <body>
 
+<!-- menu system -->
+<div class="dock_menus">
+	<!-- language -->
+	<div class="dock_language-menu" id="dock_language">
+		<div class="dock_menu_header">
+			<i class="fa-solid fa-globe"></i>
+			<span data-i18n="language">Language</span>
+		</div>
+		<menu class="dock_menu_content">
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('en')">
+				<span>English</span>
+				<i class="fa-solid fa-check check-icon"></i>
+			</li>
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-CN')">
+				<span>中文(简体)</span>
+				<i class="fa-solid fa-check check-icon"></i>
+			</li>
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-TW')">
+				<span>中文(繁體)</span>
+				<i class="fa-solid fa-check check-icon"></i>
+			</li>
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('ja')">
+				<span>日本語</span>
+				<i class="fa-solid fa-check check-icon"></i>
+			</li>
+		</menu>
+	</div>
+
+	<!-- search -->
+	<div class="dock_search-menu" id="dock_search">
+		<div class="dock_menu_header">
+			<i class="fa-solid fa-magnifying-glass"></i>
+			<span data-i18n="search">Search</span>
+		</div>
+		<menu class="dock_menu_content">
+			<li>
+				<input id="dock_menu_search_input" type="text" placeholder="Search..." disabled>
+			</li>
+			<li>
+				<button disabled data-i18n="search">Search (Not Available Yet)</button>
+			</li>
+		</menu>
+	</div>
+
+	<!-- tools -->
+	<div class="dock_tools-menu" id="dock_tools">
+		<div class="dock_menu_header">
+			<i class="fa-solid fa-wrench"></i>
+			<span data-i18n="tools">Tools</span>
+		</div>
+		<div class="dock_menu_content">
+			<div class="dock_tools_section">
+				<h3 class="dock_tools_title" data-i18n="simulation">Simulation</h3>
+				<ul class="dock_tools_list">
+					<li><a href="./physics_simulation.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation">Physics Simulation</a></li>
+					<li><a href="./physics-simulation_Newtoon-second-law.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation-newtoon-second-law">Physics Simulation (Newtoon Second Law)</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end menu system -->
+
 <main>
 	<h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1>
 
@@ -42,10 +105,10 @@
 	<p class="dock_boxes" id="about"  data-i18n-tooltip="about" onclick="javascript:HandleDockClickEvent_About();"><i class="fa-solid fa-user"></i></p>
 	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
 	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
-	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language();"><i class="fa-solid fa-globe"></i></p>
+	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language(event);"><i class="fa-solid fa-globe"></i></p>
 	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
-	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search();"><i class="fa-solid fa-magnifying-glass"></i></p>
-	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools();"><i class="fa-solid fa-wrench"></i></p>
+	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
+	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools(event);"><i class="fa-solid fa-wrench"></i></p>
 
 </section>
 
@@ -72,8 +135,17 @@
 <!-- DOM loaded -->
 <script>
 	document.addEventListener('DOMContentLoaded', async function() {
-	// 初始化语言系统
-	await InitializeLanguageSystem();
+		// 初始化语言系统
+		if (window.InitializeLanguageSystem) {
+			await InitializeLanguageSystem();
+		}
+		
+		// 延迟初始化菜单系统
+		setTimeout(() => {
+			if (window.InitializeMenuSystem) {
+				InitializeMenuSystem();
+			}
+		}, 100);
 	});
 </script>
 <!-- end DOM loaded -->
@@ -123,32 +195,41 @@ if ('serviceWorker' in navigator) {
 	function HandleDockClickEvent_Contact() {
 		// window.location.href = "#";
 	}
-	function HandleDockClickEvent_Language() {
-		const oldLang = LanguageManager.currentLanguage;
-		const newLang = LanguageManager.SwitchToNextLanguage();
-		UpdatePageLanguage();
+	function HandleDockClickEvent_Language(event) {
+		// const oldLang = LanguageManager.currentLanguage;
+		// const newLang = LanguageManager.SwitchToNextLanguage();
+		// UpdatePageLanguage();
+		event.stopPropagation();
+		ToggleMenu("dock_language");
 	}
 	function HandleDockClickEvent_Theme() {
 		SwitchTheme();
 		// console.log("Theme switched!");
 	}
-	function HandleDockClickEvent_Search() {
+	function HandleDockClickEvent_Search(event) {
 		// window.location.href = "#";
+		event.stopPropagation();
+		ToggleMenu("dock_search");
 	}
-	function HandleDockClickEvent_Tools() {
+	function HandleDockClickEvent_Tools(event) {
 		// window.location.href = "#";
+		event.stopPropagation();
+		ToggleMenu("dock_tools");
 	}
 </script>
 <!-- end dock links handler -->
 
 <!-- language switcher -->
 <script src="medias/scripts/LanguageSwitcher.js"></script>
-
 <!-- end language switcher -->
 
 <!-- theme switcher -->
 <script src="medias/scripts/ThemeSwitcher.js"></script>
 <!-- end theme switcher -->
+
+<!-- menu system -->
+<script src="medias/scripts/DockMenuSystem.js"></script>
+<!-- end menu system -->
 
 <!-- title -->
 <script>
@@ -209,16 +290,26 @@ if ('serviceWorker' in navigator) {
 	const protectedMediaElements = document.querySelectorAll('.protected-media');
 
 	protectedMediaElements.forEach(element => {
+		// 禁用右键菜单
 		element.addEventListener('contextmenu', event => {
 			event.preventDefault();
 		});
 
+		// 禁用拖拽
 		element.setAttribute('draggable', false);
+
+		// 禁用拖动
 		element.addEventListener('dragstart', event => {
 			event.preventDefault();
 		});
 
+		// 禁用复制
 		element.addEventListener('copy', event => {
+			event.preventDefault();
+		});
+
+		// 禁用长按
+		element.addEventListener('pointercancel', event => {
 			event.preventDefault();
 		});
 	});

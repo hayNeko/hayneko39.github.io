@@ -11,11 +11,13 @@
 	--index-top: 10;
 	--index-very-top: 20;
 	--index-overlay: 1024;
+	--index-dock-menu: 1536;
 	--index-transition-overlay: 2048;
 
 	/* transitions */
 	--transition-smooth: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
 	--transition-sidebar: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+	--transition-menu: cubic-bezier(0.23, 1, 0.320, 1) 0.3s;
 
 	/* text colors */
 	--text-color-primary: #F0F8F0;
@@ -24,7 +26,7 @@
 	/* background colors */
 	--sidebar-bg-color: #1E1E1E3F;
 	--sidebar-bg-color-hover: #2D2D2D7F;
-	--selection: #52d3dc;
+	--selection: #52D3DC;
 	--html-bg-color: #07080F;
 
 	/* dock colors */
@@ -41,6 +43,13 @@
 	--light-bg-start: #EDEFFA;
 	/* --light-bg-end: #F5F7FF; */
 	--light-bg-end: #EDEFFA;
+
+	/* dock menu colors */
+	--dock-menu-bg-color: #2C2C2CE6;
+	--dock-menu-border-color: #444444CC;
+	--dock-menu-shadow-color: #0000004D;
+	--dock-menu-hover-bg: #3C3C3CCC;
+	--dock-menu-active-bg: #4A4A4CCC;
 }
 
 html.light-theme {
@@ -54,7 +63,7 @@ html.light-theme {
 	/* background colors */
 	--sidebar-bg-color: #F0F8F03F;
 	--sidebar-bg-color-hover: #E0E0E07F;
-	--selection: #b4c6fd;
+	--selection: #B4C6FD;
 	--html-bg-color: #EDEFFA;
 
 	/* dock colors */
@@ -72,6 +81,13 @@ html.light-theme {
 	/* --light-bg-end: #F5F7FF; */
 	--light-bg-end: #EDEFFA;
 
+	/* dock menu colors */
+	--dock-menu-bg-color: #F0F8F0E6;
+	--dock-menu-border-color: #E0E0E0CC;
+	--dock-menu-shadow-color: #0000001A;
+	--dock-menu-hover-bg: #E0E8E0CC;
+	--dock-menu-active-bg: #D0D8D0CC;
+
 }
 
 ::-webkit-scrollbar {
@@ -88,7 +104,7 @@ html.light-theme {
 	pointer-events: none;
 	opacity: 0;
 	transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1), 
-				opacity 0.5s ease;
+				opacity 0.3s ease;
 }
 
 .theme-transition-overlay.active {

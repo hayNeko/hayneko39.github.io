@@ -58,6 +58,6 @@ function SwitchTheme() {
 					document.body.classList.remove('theme-transitioning');
 				}, 100);
 			}, 300);
-		}, 600); // 让渐变持续一段时间
+		}, 500); // 让渐变持续一段时间
 	});
 }

@@ -1,3 +1,28 @@
+const DEFAULT_LANGUAGE_DATA = {
+	'en': {
+		name: 'English',
+		"translations": {
+			"home": "Home",
+			"album": "Album",
+			"about": "About",
+			"projects": "Projects",
+			"contact": "Contact",
+			"language": "Language",
+			"switch theme": "Switch Theme",
+			"search": "Search (Not Available Yet)",
+			"tools": "Tools",
+			"title": "Hayneko's Blog",
+			"title_leave-message": "Miku! Come back soon to ",
+
+			"construction": "NEW SITE IS UNDER CONSTRUCTION",
+
+			"no-tools-available": "No tools available.",
+			"physics-simulation": "Physics Simulation (Verson 1.0)",
+			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)"
+		}
+	},
+	languages: ['en']
+}; // for fallback if loading fails
 
 const LanguageManager = {
 data: null,
@@ -15,27 +40,7 @@ async LoadLanguageData() {
 		return true;
 	} catch (error) {
 		console.error('Error loading language data:', error);
-		this.data = {
-			'en': {
-				name: 'English',
-				"translations": {
-					"home": "Home",
-					"album": "Album",
-					"about": "About",
-					"projects": "Projects",
-					"contact": "Contact",
-					"language": "Language",
-					"switch theme": "Switch Theme",
-					"search": "Search",
-					"tools": "Tools",
-					"title": "Hayneko's Blog",
-					"title_leave-message": "Miku! Come back soon to ",
-
-					"construction": "NEW SITE IS UNDER CONSTRUCTION"
-				}
-			},
-			languages: ['en']
-		};
+		this.data = DEFAULT_LANGUAGE_DATA;
 		return false;
 	}
 },
@@ -44,24 +49,7 @@ async LoadLanguageData() {
 	GetCurrentLanguageData() {
 		if (!this.data) {
 			console.warn('Language data not loaded yet, returning default English data.');
-			return {
-				name: 'English',
-				translations: {
-					"home": "Home",
-					"album": "Album",
-					"about": "About",
-					"projects": "Projects",
-					"contact": "Contact",
-					"language": "Language",
-					"switch theme": "Switch Theme",
-					"search": "Search",
-					"tools": "Tools",
-					"title": "Hayneko's Blog",
-					"title_leave-message": "Miku! Come back soon to ",
-
-					"construction": "NEW SITE IS UNDER CONSTRUCTION"
-				}
-			};
+			return DEFAULT_LANGUAGE_DATA;
 		}
 		if (!this.data[this.currentLanguage]) {
 			console.warn(`Language ${this.currentLanguage} not found, falling back to English.`);
@@ -194,3 +182,18 @@ function UpdatePageLanguage() {
 	document.documentElement.lang = LanguageManager.currentLanguage;
 }
 
+LanguageManager.SetLanguage = function(langCode) {
+	const languageOrder = this.data && this.data.languages ? this.data.languages : this.languageOrder;
+	
+	if (languageOrder.includes(langCode)) {
+		this.currentLanguage = langCode;
+		localStorage.setItem('siteLanguage', this.currentLanguage);
+		
+		// 更新HTML的lang属性
+		document.documentElement.lang = this.currentLanguage;
+		return true;
+	}
+	return false;
+};
+
+window.LanguageManager = LanguageManager;

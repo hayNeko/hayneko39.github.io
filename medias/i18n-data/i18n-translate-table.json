@@ -9,12 +9,16 @@
 			"contact": "Contact",
 			"language": "Language",
 			"switch theme": "Theme",
-			"search": "Search",
+			"search": "Search (Not Available Yet)",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",
 			"title_leave-message": "Miku! Come back soon to ",
 
-			"construction": "NEW SITE IS UNDER CONSTRUCTION"
+			"construction": "NEW SITE IS UNDER CONSTRUCTION",
+
+			"no-tools-available": "No tools available.",
+			"physics-simulation": "Physics Simulation (Verson 1.0)",
+			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)"
 		}
 	},
 	"zh-CN": {
@@ -27,12 +31,16 @@
 			"contact": "联系",
 			"language": "语言",
 			"switch theme": "主题",
-			"search": "搜索",
+			"search": "搜索 (尚未可用)",
 			"tools": "工具",
 			"title": "Hayneko的博客",
 			"title_leave-message": "Miku! Come back soon to ",
 
-			"construction": "新网站建设中"
+			"construction": "新网站建设中",
+
+			"no-tools-available": "没有可用的工具。",
+			"physics-simulation": "物理模拟器 (版本 1.0)",
+			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)"
 		}
 	},
 	"zh-TW": {
@@ -45,12 +53,16 @@
 			"contact": "聯絡",
 			"language": "語言",
 			"switch theme": "主題",
-			"search": "搜尋",
+			"search": "搜尋 (尚未可用)",
 			"tools": "工具",
 			"title": "Hayneko的部落格",
 			"title_leave-message": "Miku! Come back soon to ",
 
-			"construction": "新網站建設中"
+			"construction": "新網站建設中",
+
+			"no-tools-available": "沒有可用的工具。",
+			"physics-simulation": "物理模擬器 (版本 1.0)",
+			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)"
 		}
 	},
 	"ja": {
@@ -63,12 +75,16 @@
 			"contact": "連絡先",
 			"language": "言語",
 			"switch theme": "テーマ",
-			"search": "検索",
+			"search": "検索 （まだ利用できません）",
 			"tools": "ツール",
 			"title": "Haynekoのブログ",
 			"title_leave-message": "Miku! Come back soon to ",
 
-			"construction": "新しいサイトは建設中です"
+			"construction": "新しいサイトは建設中です",
+
+			"no-tools-available": "利用可能なツールはありません。",
+			"physics-simulation": "物理シミュレーター (ベーター 1.0)",
+			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)"
 		}
 	},
 	"languages": ["en", "zh-CN", "zh-TW", "ja"]

@@ -239,3 +239,278 @@
 .dock_boxes:nth-child(9) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.7s both; }
 .dock_boxes:nth-child(10) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.75s both; }
 /* .dock_avatar { animation: DockIconAppear 0.3s ease 0.05s both; } */
+
+/* dock menus */
+.dock_menus {
+	position: fixed;
+	z-index: var(--index-dock-menu);
+	pointer-events: none;
+	display: flex;
+	transition: var(--transition-menu);
+}
+
+.dock_language-menu,
+.dock_search-menu,
+.dock_tools-menu {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 110px;
+	background: var(--dock-menu-bg-color);
+	border-radius: 16px;
+	backdrop-filter: blur(20px) saturate(180%);
+	border: 1px solid var(--dock-menu-border-color);
+	box-shadow: 
+		0 10px 40px var(--dock-menu-shadow-color),
+		inset 0 1px 0 #FFFFFF7F;
+	padding: 12px;
+	min-width: 280px;
+	pointer-events: auto;
+	display: none;
+	opacity: 0;
+	/* visibility: hidden; */
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	/* 确保菜单不会超出屏幕顶部 */
+	max-height: calc(100vh - 130px); /* 为dock和间距预留空间 */
+	overflow-y: auto; /* 如果内容太多，允许滚动 */
+	
+}
+
+.dock_language-menu.show,
+.dock_search-menu.show,
+.dock_tools-menu.show {
+	/* transform: translateY(-50px) translateX(0); */
+	animation: dock_menu_pop_up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	opacity: 1;
+	display: block;
+}
+
+.dock_menu_header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 12px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var(--text-color-primary);
+	border-bottom: 1px solid var(--dock-menu-border-color);
+	margin-bottom: 8px;
+}
+
+.dock_menu_header i {
+	font-size: 1rem;
+	opacity: 0.8;
+}
+
+.dock_menu_content {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dock_menu_option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 12px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	color: var(--text-color-primary);
+	font-size: 0.9rem;
+}
+
+.dock_menu_option:hover {
+	background: var(--dock-menu-hover-bg);
+	transform: translateX(2px);
+}
+
+.dock_menu_option.active {
+	background: var(--dock-menu-active-bg);
+}
+
+.dock_menu_option .check-icon {
+	font-size: 0.8rem;
+	color: #4A9EFF;
+	display: none;
+}
+
+.dock_menu_option.active .check-icon {
+	display: block;
+}
+
+/* 搜索菜单特定样式 */
+.dock_search-menu {
+	min-width: fit-content;
+}
+
+.dock_search-menu input[type="text"] {
+	width: 320px;
+	background: var(--dock-menu-hover-bg);
+	border: 1px solid var(--dock-menu-border-color);
+	border-radius: 10px;
+	padding: 10px 12px;
+	color: var(--text-color-primary);
+	font-size: 0.9rem;
+	outline: none;
+	transition: all 0.2s ease;
+}
+
+.dock_search-menu input[type="text"]:focus {
+	border-color: #4A9EFF;
+	box-shadow: 0 0 0 2px #4A9EFF40;
+}
+
+.dock_search-menu button {
+	width: 100%;
+	background: var(--dock-menu-active-bg);
+	border: 1px solid var(--dock-menu-border-color);
+	border-radius: 10px;
+	padding: 10px;
+	color: var(--text-color-primary);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-size: 0.9rem;
+	margin-top: 8px;
+}
+
+.dock_search-menu button:hover {
+	background: var(--dock-menu-hover-bg);
+	transform: translateY(-1px);
+}
+
+/* Tools菜单特定样式 */
+.dock_tools_section {
+	margin-bottom: 12px;
+}
+
+.dock_tools_section:last-child {
+	margin-bottom: 0;
+}
+
+.dock_tools_title {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--text-color-primary);
+	margin: 0 0 8px 0;
+	padding: 4px 0;
+	border-bottom: 1px solid var(--dock-menu-border-color);
+}
+
+.dock_tools_list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.dock_tools_list li {
+	padding: 0;
+	margin: 0;
+}
+
+.dock_tools_list a {
+	display: block;
+	padding: 8px 10px;
+	color: var(--text-color-primary);
+	text-decoration: none;
+	font-size: 0.85rem;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+	background: transparent;
+}
+
+.dock_tools_list a:hover {
+	background: var(--dock-menu-hover-bg);
+	padding-left: 12px;
+}
+
+/* 菜单动画 */
+@keyframes dock_menu_pop_up {
+	0% {
+		opacity: 0;
+		transform: var(--menu-pop-origin, translate(-50%, 0)) scale(0.3);
+		filter: blur(10px);
+	}
+	70% {
+		opacity: 1;
+		transform: translate(-50%, -10px) scale(1.05);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, 0) scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes dock_menu_collapse {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, 0) scale(1);
+		filter: blur(0);
+	}
+	30% {
+		opacity: 1;
+		transform: translate(-50%, -5px) scale(0.95);
+	}
+	100% {
+		opacity: 0;
+		transform: var(--menu-pop-origin, translate(-50%, 0)) scale(0.2);
+		filter: blur(10px);
+	}
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+	.dock_language-menu,
+	.dock_search-menu,
+	.dock_tools-menu {
+		min-width: 180px;
+		max-width: 250px;
+		bottom: 95px;
+	}
+	
+	.dock_search-menu {
+		min-width: 240px;
+	}
+	
+	.dock_menu_option {
+		padding: 8px 10px;
+		font-size: 0.85rem;
+	}
+	
+	.dock_search-menu input[type="text"] {
+		padding: 8px 10px;
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.dock_language-menu,
+	.dock_search-menu,
+	.dock_tools-menu {
+		min-width: 160px;
+		max-width: 220px;
+		bottom: 80px;
+	}
+	
+	.dock_search-menu {
+		min-width: 200px;
+	}
+	
+	.dock_menu_header {
+		padding: 6px 10px;
+		font-size: 0.85rem;
+	}
+	
+	.dock_menu_option {
+		padding: 7px 9px;
+		font-size: 0.8rem;
+	}
+}
+/* end dock menus */
