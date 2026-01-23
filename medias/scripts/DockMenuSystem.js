@@ -11,11 +11,13 @@ function InitializeMenuSystem() {
 		// 检查点击的元素是否是菜单或菜单按钮
 		const isMenuClick = event.target.closest('.dock_language-menu') || 
 						event.target.closest('.dock_search-menu') || 
-						event.target.closest('.dock_tools-menu');
+						event.target.closest('.dock_tools-menu') ||
+						event.target.closest('.dock_contact-menu');
 		
 		const isButtonClick = event.target.closest('#language') || 
 							event.target.closest('#search') || 
-							event.target.closest('#tools');
+							event.target.closest('#tools') ||
+							event.target.closest('#contact');
 
 		if (!isMenuClick && !isButtonClick) {
 			CloseAllDockMenus();
@@ -89,7 +91,7 @@ function ToggleMenu(menuId) {
 
 // 关闭所有菜单
 function CloseAllDockMenus() {
-	const menus = document.querySelectorAll('.dock_language-menu, .dock_search-menu, .dock_tools-menu');
+	const menus = document.querySelectorAll('.dock_language-menu, .dock_search-menu, .dock_tools-menu, .dock_contact-menu');
 	menus.forEach(menu => {
 		// 清除之前的超时
 		if (dock_menu_timeout_ids[menu.id]) {
@@ -132,13 +134,6 @@ function SetLanguage(langCode) {
 		// 更新语言选择状态
 		UpdateDockLanguageSelection();
 		
-		// 添加反馈动画
-		const button = document.getElementById('language');
-		if (button) {
-			button.classList.add('active');
-			button.classList.remove('active');
-		}
-	
 	} else {
 		console.error('LanguageManager not available');
 	}

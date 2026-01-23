@@ -8,17 +8,24 @@
 			"projects": "Projects",
 			"contact": "Contact",
 			"language": "Language",
-			"switch theme": "Theme",
+			"switch-theme": "Switch Theme",
 			"search": "Search (Not Available Yet)",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",
 			"title_leave-message": "Miku! Come back soon to ",
+			"login": "Login",
 
 			"construction": "NEW SITE IS UNDER CONSTRUCTION",
 
+			"contact-via-github": "Contact me via GitHub",
+			"contact-via-instagram": "Contact me via Instagram",
+
 			"no-tools-available": "No tools available.",
 			"physics-simulation": "Physics Simulation (Verson 1.0)",
-			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)"
+			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)",
+
+			"body_footer_text-0": "© Hayneko. Created on Jan 10, 2026.",
+			"body_footer_text-1": "This site has been refactored 4 times."
 		}
 	},
 	"zh-CN": {
@@ -30,17 +37,24 @@
 			"projects": "项目",
 			"contact": "联系",
 			"language": "语言",
-			"switch theme": "主题",
+			"switch-theme": "切换主题",
 			"search": "搜索 (尚未可用)",
 			"tools": "工具",
 			"title": "Hayneko的博客",
 			"title_leave-message": "Miku! Come back soon to ",
+			"login": "登录",
 
 			"construction": "新网站建设中",
 
+			"contact-via-github": "通过 GitHub 联系我",
+			"contact-via-instagram": "通过 Instagram 联系我",
+
 			"no-tools-available": "没有可用的工具。",
 			"physics-simulation": "物理模拟器 (版本 1.0)",
-			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)"
+			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)",
+
+			"body_footer_text-0": "© Hayneko. 创建于2026年1月10日。",
+			"body_footer_text-1": "此网站已重构4次。"
 		}
 	},
 	"zh-TW": {
@@ -52,17 +66,24 @@
 			"projects": "專案",
 			"contact": "聯絡",
 			"language": "語言",
-			"switch theme": "主題",
+			"switch-theme": "切換主題",
 			"search": "搜尋 (尚未可用)",
 			"tools": "工具",
 			"title": "Hayneko的部落格",
 			"title_leave-message": "Miku! Come back soon to ",
+			"login": "登入",
 
 			"construction": "新網站建設中",
 
+			"contact-via-github": "透過 GitHub 聯絡我",
+			"contact-via-instagram": "透過 Instagram 聯絡我",
+
 			"no-tools-available": "沒有可用的工具。",
 			"physics-simulation": "物理模擬器 (版本 1.0)",
-			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)"
+			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)",
+
+			"body_footer_text-0": "© Hayneko. 建立於2026年1月10日。",
+			"body_footer_text-1": "此網站已重構4次。"
 		}
 	},
 	"ja": {
@@ -74,17 +95,24 @@
 			"projects": "プロジェクト",
 			"contact": "連絡先",
 			"language": "言語",
-			"switch theme": "テーマ",
+			"switch-theme": "テーマを切り替える",
 			"search": "検索 （まだ利用できません）",
 			"tools": "ツール",
 			"title": "Haynekoのブログ",
 			"title_leave-message": "Miku! Come back soon to ",
+			"login": "ログイン",
 
 			"construction": "新しいサイトは建設中です",
 
+			"contact-via-github": "GitHubを通じて私に連絡してください",
+			"contact-via-instagram": "Instagramを通じて私に連絡してください",
+
 			"no-tools-available": "利用可能なツールはありません。",
 			"physics-simulation": "物理シミュレーター (ベーター 1.0)",
-			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)"
+			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)",
+
+			"body_footer_text-0": "© Hayneko. 2026年1月10日に作成されました。",
+			"body_footer_text-1": "このサイトは4回リファクタリングされました。"
 		}
 	},
 	"languages": ["en", "zh-CN", "zh-TW", "ja"]

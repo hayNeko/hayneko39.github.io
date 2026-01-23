@@ -23,12 +23,59 @@
 	<!-- css -->
 	<link rel="stylesheet" href="medias/css/index.css">
 	<link rel="stylesheet" href="medias/css/dock.css">
+	<link rel="stylesheet" href="medias/css/main-page.css">
+
 	
 </head>
 <body>
 
+<header class="body_header">
+	<a href="index.html" class="body_header_anchor not-link">
+		<img class="body_header_logo protected-media" src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
+		<h1 class="body_header_title" data-i18n="title">Hayneko's blog</h1>
+	</a>
+
+	<button class="body_header_menu_login-button" id="body_header_menu_login-button" data-i18n="login" onclick="javascript:ToggleMenu('dock_menu_header_login-menu');">Login</button>
+</header>
+<main>
+	<!-- <h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1> -->
+
+	<aside class=""></aside>
+	<section class=""></section>
+	<!-- <strong>A sample strong tag.</strong> -->
+
+
+</main>
+
+<footer class="body_footer">
+	<p class="body_footer_text" data-i18n="body_footer_text-0">Hayneko. Created on Jan 10, 2026.</p>
+	<p class="body_footer_text" data-i18n="body_footer_text-1">This site has been refactored 4 times.</p>
+
+	<a href="https://github.com/hayNeko" target="_blank" class="body_footer_link"><i class="fa-brands fa-github"></i>GitHub</a>
+
+</footer>
+
+
 <!-- menu system -->
 <div class="dock_menus">
+	<!-- contact -->
+	<div class="dock_contact-menu" id="dock_contact">
+		<div class="dock_menu_header">
+			<i class="fa-solid fa-comment"></i>
+			<span data-i18n="contact">Contact</span>
+		</div>
+		<menu class="dock_menu_content">
+			<li class="dock_menu_option" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/github.com/hayNeko');">
+				<i class="fa-brands fa-github"></i>
+				<span data-i18n="contact-via-github">Contact me via GitHub</span>
+			</li>
+			<li class="dock_menu_option">
+				<i class="fa-brands fa-instagram" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/www.instagram.com/hayneko_dword/');"></i>
+				<span data-i18n="contact-via-instagram">Contact me via Instagram</span>
+			</li>
+		</menu>
+	</div>
+	
 	<!-- language -->
 	<div class="dock_language-menu" id="dock_language">
 		<div class="dock_menu_header">
@@ -63,10 +110,10 @@
 		</div>
 		<menu class="dock_menu_content">
 			<li>
-				<input id="dock_menu_search_input" type="text" placeholder="Search..." disabled>
+				<input id="dock_menu_search_input" type="text" placeholder="Search..." disabled style="cursor:not-allowed;">
 			</li>
 			<li>
-				<button disabled data-i18n="search">Search (Not Available Yet)</button>
+				<button data-i18n="search" disabled style="cursor:not-allowed;">Search (Not Available Yet)</button>
 			</li>
 		</menu>
 	</div>
@@ -90,11 +137,7 @@
 </div>
 <!-- end menu system -->
 
-<main>
-	<h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1>
-
-</main>
-
+<!-- dock -->
 <section class="dock">
 	<div class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
 		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
@@ -106,11 +149,12 @@
 	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
 	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
 	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language(event);"><i class="fa-solid fa-globe"></i></p>
-	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
+	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch-theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
 	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
 	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools(event);"><i class="fa-solid fa-wrench"></i></p>
 
 </section>
+<!-- end dock -->
 
 <!-- waifu -->
 
@@ -178,6 +222,15 @@ if ('serviceWorker' in navigator) {
 <script>
 	function HandleDockClickEvent_EmmitParticle() {
 		EmmitParticle();
+
+		// for debugging
+		// caches.delete('hayneko-blog-cache-v1').then(() => {
+		// 	console.log('Cache cleared');
+		// });
+
+	}
+	function HandleDockClickEvent_Contact_Via(url) {
+		window.open(url, "_blank");
 	}
 
 	function HandleDockClickEvent_Home() {
@@ -187,13 +240,13 @@ if ('serviceWorker' in navigator) {
 		// window.location.href = "#";
 	}
 	function HandleDockClickEvent_About() {
-		// window.location.href = "#";
 	}
 	function HandleDockClickEvent_Projects() {
 		window.open("https://github.com/hayNeko", "_blank");
 	}
 	function HandleDockClickEvent_Contact() {
-		// window.location.href = "#";
+		event.stopPropagation();
+		ToggleMenu("dock_contact");
 	}
 	function HandleDockClickEvent_Language(event) {
 		// const oldLang = LanguageManager.currentLanguage;

@@ -1,0 +1,70 @@
+@import url("./root.css");
+
+
+
+.body_header {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: var(--header-background-color);
+	border-bottom: 1px solid var(--border-color-secondary);
+}
+
+.body_header_anchor {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.body_header_logo {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.body_header_title {
+	color: var(--text-color-primary);
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.body_header_menu_login-button {
+	margin-left: auto;
+	padding: 8px 16px;
+	font-size: 0.75rem;
+	background-color: transparent;
+	color: var(--text-color-primary);
+	border: 1px solid var(--border-color-primary);
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.body_header_menu_login-button:hover {
+	background-color: var(--border-color-primary);
+	color: var(--text-anchor-color);
+}
+
+
+
+
+
+.body_footer {
+	margin-top: 40px;
+	padding: 20px;
+	background-color: var(--footer-background-color);
+	border-top: 1px solid var(--border-color-secondary);
+	text-align: center;
+	color: var(--text-color-primary);
+	font-size: 0.875rem;
+}
+
+.body_footer_text {
+	margin: 5px 0;
+	color: var(--text-color-primary);
+}
+
+.body_footer_link {
+	color: var(--text-anchor-color);
+}

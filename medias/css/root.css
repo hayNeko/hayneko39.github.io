@@ -2,6 +2,7 @@
 	/* general */
 	--general-font-color: #F0F0F0;
 	--main-bg-color: linear-gradient(135deg, #2C3E50 0%, #1E5E68 100%);
+	--text-strong-color: #F03F3F;
 
 	/* z index */
 	--index-base: -1;
@@ -28,6 +29,7 @@
 	--sidebar-bg-color-hover: #2D2D2D7F;
 	--selection: #52D3DC;
 	--html-bg-color: #07080F;
+	--header-background-color: #1E1E1E3F;
 
 	/* dock colors */
 	--dock-bg-color: #2C2C2C8C;
@@ -50,6 +52,11 @@
 	--dock-menu-shadow-color: #0000004D;
 	--dock-menu-hover-bg: #3C3C3CCC;
 	--dock-menu-active-bg: #4A4A4CCC;
+
+	/* border colors */
+	--border-color-primary: #E0E0E03F;
+	--border-color-secondary: #E8E8E83F;
+	
 }
 
 html.light-theme {
@@ -65,6 +72,7 @@ html.light-theme {
 	--sidebar-bg-color-hover: #E0E0E07F;
 	--selection: #B4C6FD;
 	--html-bg-color: #EDEFFA;
+	--header-background-color: #F0F8F03F;
 
 	/* dock colors */
 	--dock-bg-color: #F0F8F03F;
@@ -88,6 +96,17 @@ html.light-theme {
 	--dock-menu-hover-bg: #E0E8E0CC;
 	--dock-menu-active-bg: #D0D8D0CC;
 
+	/* border colors */
+	--border-color-primary: #4444443F;
+	--border-color-secondary: #5555553F;
+}
+
+.not-allowed {
+	cursor: not-allowed;
+}
+
+a:not(.not-link) {
+	text-decoration: underline;
 }
 
 ::-webkit-scrollbar {
@@ -103,8 +122,7 @@ html.light-theme {
 	z-index: 9999;
 	pointer-events: none;
 	opacity: 0;
-	transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1), 
-				opacity 0.3s ease;
+	transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.3s ease;
 }
 
 .theme-transition-overlay.active {
@@ -130,7 +148,7 @@ body.theme-transitioning * {
 
 @font-face {
 	font-family: zh-sans-serif;
-	src: url(../fonts/WenYuanSerifSCC-Regular.ttf);
+	src: url(../fonts/LorchinSansP0.woff2);
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -142,4 +160,14 @@ body.theme-transitioning * {
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
+}
+
+strong {
+	font-weight: bold;
+	text-size-adjust: 125%;
+	/* text-transform: uppercase; */
+	color: var(--text-strong-color)
+}
+*, *::before, *::after {
+	font-family: inherit;
 }

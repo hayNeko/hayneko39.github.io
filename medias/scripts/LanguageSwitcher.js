@@ -8,7 +8,7 @@ const DEFAULT_LANGUAGE_DATA = {
 			"projects": "Projects",
 			"contact": "Contact",
 			"language": "Language",
-			"switch theme": "Switch Theme",
+			"switch-theme": "Switch Theme",
 			"search": "Search (Not Available Yet)",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",

@@ -147,23 +147,6 @@
         }
         #export-btn:hover { background-color: #0b7dda; }
 
-        .sidebar {
-            display: absolute;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: var(--sidebar-bg-color);
-            border-radius: 0 40px 40px 0;
-            transition: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
-            overflow: hidden;
-            text-wrap-mode: nowrap;
-            max-height: 50vh;
-            max-width: 25vw;
-            margin: 75vh 0 0 0;
-            width: 75px;
-            z-index: 3;
-            position: fixed;
-        }
 
 
         @media (max-width: 1280px) {
@@ -197,19 +180,6 @@
     </style>
 </head>
 <body>
-    <section class="sidebar">
-			<div class="avatar">
-				<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-			</div>
-			<a href="index.html" class="box" id="home"><i class="fa-solid fa-house"></i><span>home</span></a>
-			<a href="https://github.com/hayNeko" class="box" id="projects" target="_blank"><i class="fa-solid fa-code"></i><span>projects</span></a>
-			
-			<button class="box btt" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></button>
-			<button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
-            <button class="box btt" id="tools"><i class="fa-solid fa-wrench"></i><span>tools</span></button>
-		
-		
-		</section>
     <h1>牛頓第二定律：<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>F</mi><mrow><mi>n</mi><mi>e</mi><mi>t</mi></mrow></msub><mo>=</mo><mi>m</mi><mi>a</mi></math> 動態模擬</h1>
     
     <div id="main-container">

@@ -24,15 +24,13 @@ const CACHE_POLICY = {
 
 // 需要预缓存的资源（根据实际路径调整）
 const PRECACHE_RESOURCES = [
-	'./',
 	OFFLINE_URL,
-	'./index.html',
-	'./medias/css/index.css',
-	'./medias/css/dock.css',
-	'./medias/scripts/LanguageSwitcher.js',
-	'./medias/scripts/ThemeSwitcher.js',
-	'./medias/scripts/CreateParticle.js',
-	'./medias/fonts/07yasashisa.ttf',
+	// './medias/css/index.css',
+	// './medias/css/dock.css',
+	// './medias/scripts/LanguageSwitcher.js',
+	// './medias/scripts/ThemeSwitcher.js',
+	// './medias/scripts/CreateParticle.js',
+	// './medias/fonts/07yasashisa.ttf',
 	'./medias/fonts/WenYuanSerifSCC-Regular.ttf',
 	'./medias/fonts/PatuaOne-Regular.ttf'
 ];
@@ -140,3 +138,12 @@ self.addEventListener('message', (event) => {
 		caches.delete(CACHE_NAME);
 	}
 });
+
+// clear cache for debugging
+// const range = self.document ? self.document.getElementById('avatar') : null;
+// if (range) {
+// 	range.addEventListener('click', () => {
+// 		caches.delete(CACHE_NAME);
+// 		console.log('Cache cleared');
+// 	});
+// }

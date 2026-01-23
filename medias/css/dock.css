@@ -247,8 +247,10 @@
 	pointer-events: none;
 	display: flex;
 	transition: var(--transition-menu);
+	width: 100%;
 }
 
+.dock_contact-menu,
 .dock_language-menu,
 .dock_search-menu,
 .dock_tools-menu {
@@ -271,11 +273,14 @@
 	/* visibility: hidden; */
 	transition: opacity 0.3s ease, visibility 0.3s ease;
 	/* 确保菜单不会超出屏幕顶部 */
-	max-height: calc(100vh - 130px); /* 为dock和间距预留空间 */
+	max-height: calc(100vh - 130px);
+	max-width: 90vw;
+	
 	overflow-y: auto; /* 如果内容太多，允许滚动 */
 	
 }
 
+.dock_contact-menu.show,
 .dock_language-menu.show,
 .dock_search-menu.show,
 .dock_tools-menu.show {
@@ -325,7 +330,6 @@
 
 .dock_menu_option:hover {
 	background: var(--dock-menu-hover-bg);
-	transform: translateX(2px);
 }
 
 .dock_menu_option.active {
@@ -418,7 +422,6 @@
 	display: block;
 	padding: 8px 10px;
 	color: var(--text-color-primary);
-	text-decoration: none;
 	font-size: 0.85rem;
 	border-radius: 8px;
 	transition: all 0.2s ease;
@@ -427,8 +430,14 @@
 
 .dock_tools_list a:hover {
 	background: var(--dock-menu-hover-bg);
-	padding-left: 12px;
 }
+
+
+
+
+
+
+
 
 /* 菜单动画 */
 @keyframes dock_menu_pop_up {
@@ -487,6 +496,7 @@
 	.dock_search-menu input[type="text"] {
 		padding: 8px 10px;
 		font-size: 0.85rem;
+		width: fit-content;
 	}
 }
 
@@ -500,7 +510,7 @@
 	}
 	
 	.dock_search-menu {
-		min-width: 200px;
+		min-width: fit-content;
 	}
 	
 	.dock_menu_header {
