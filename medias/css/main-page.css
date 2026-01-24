@@ -53,6 +53,7 @@
 .body_footer {
 	margin-top: 40px;
 	padding: 20px;
+	padding-bottom: 120px;
 	background-color: var(--footer-background-color);
 	border-top: 1px solid var(--border-color-secondary);
 	text-align: center;
@@ -62,9 +63,16 @@
 
 .body_footer_text {
 	margin: 5px 0;
-	color: var(--text-color-primary);
+	color: var(--general-text-color);
+	font-size: 0.75rem;
 }
 
 .body_footer_link {
 	color: var(--text-anchor-color);
+}
+
+
+main {
+	display: flex;
+	min-height: 95vh;
 }

@@ -56,8 +56,8 @@ function SwitchTheme() {
 						document.body.removeChild(overlay);
 					}
 					document.body.classList.remove('theme-transitioning');
-				}, 100);
-			}, 300);
-		}, 500); // 让渐变持续一段时间
+				}, 50);
+			}, 250);
+		}, 300); // 让渐变持续一段时间
 	});
 }

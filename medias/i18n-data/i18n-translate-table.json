@@ -16,11 +16,12 @@
 			"login": "Login",
 
 			"construction": "NEW SITE IS UNDER CONSTRUCTION",
-
+			
 			"contact-via-github": "Contact me via GitHub",
 			"contact-via-instagram": "Contact me via Instagram",
-
+			
 			"no-tools-available": "No tools available.",
+			"simulation": "Simulation",
 			"physics-simulation": "Physics Simulation (Verson 1.0)",
 			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)",
 
@@ -50,6 +51,7 @@
 			"contact-via-instagram": "通过 Instagram 联系我",
 
 			"no-tools-available": "没有可用的工具。",
+			"simulation": "模拟工具",
 			"physics-simulation": "物理模拟器 (版本 1.0)",
 			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)",
 
@@ -79,6 +81,7 @@
 			"contact-via-instagram": "透過 Instagram 聯絡我",
 
 			"no-tools-available": "沒有可用的工具。",
+			"simulation": "模擬工具",
 			"physics-simulation": "物理模擬器 (版本 1.0)",
 			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)",
 
@@ -108,6 +111,7 @@
 			"contact-via-instagram": "Instagramを通じて私に連絡してください",
 
 			"no-tools-available": "利用可能なツールはありません。",
+			"simulation": "シミュレーター",
 			"physics-simulation": "物理シミュレーター (ベーター 1.0)",
 			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)",
 

@@ -10,7 +10,7 @@
 	transition: var(--transition-sidebar);
 	cursor: pointer;
 	position: fixed;
-	bottom: 30px;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: var(--index-very-top);
@@ -29,12 +29,12 @@
 	gap: 8px;
 }
 
-.dock:hover {
+/* .dock:hover {
 	width: auto;
 	background-color: var(--dock-bg-color);
 	backdrop-filter: blur(20px) saturate(180%);
 	-webkit-backdrop-filter: blur(20px) saturate(180%);
-}
+} */
 
 .dock_avatar {
 	display: flex;
@@ -42,6 +42,7 @@
 	justify-content: center;
 	transition: var(--transition-smooth);
 	padding-right: 5px;
+	padding-left: 5px;
 	order: -1;
 }
 
@@ -101,7 +102,7 @@
 .dock_boxes::after {
 	content: attr(data-tooltip);
 	position: absolute;
-	bottom: 60px;
+	bottom: 80px;
 	color: var(--text-color-primary);
 	padding: 6px 12px;
 	border-radius: 16px;

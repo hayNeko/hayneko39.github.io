@@ -32,7 +32,10 @@ const PRECACHE_RESOURCES = [
 	// './medias/scripts/CreateParticle.js',
 	// './medias/fonts/07yasashisa.ttf',
 	'./medias/fonts/WenYuanSerifSCC-Regular.ttf',
-	'./medias/fonts/PatuaOne-Regular.ttf'
+	'./medias/fonts/PatuaOne-Regular.ttf',
+	'./medias/fonts/LorchinSansP0.woff2',
+
+	'./medias/picures/background.jpg',
 ];
 
 self.addEventListener('install', (event) => {

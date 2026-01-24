@@ -21,7 +21,41 @@ html:lang(ja) {
 	font-family: jp-sans-serif, sans-serif;
 }
 
+html.light-theme body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: var(--index-base);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-image: url("../picures/bg-hatsune-miku.jpg");
+	filter: brightness(1.5) saturate(0.75);
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: var(--index-base);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-image: url("../picures/bg-hatsune-miku.jpg");
+	filter: brightness(0.5) saturate(1.5);
+}
+
 body {
 	z-index: var(--index-base);
-	background-color: var(--html-bg-color);
+	
+	color: var(--text-primary);
+	min-width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
