@@ -25,6 +25,8 @@
 			"physics-simulation": "Physics Simulation (Verson 1.0)",
 			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)",
 
+			"docs-i386": "Intel 80386 Microprocessor Manual",
+
 			"body_footer_text-0": "© Hayneko. Created on Jan 10, 2026.",
 			"body_footer_text-1": "This site has been refactored 4 times."
 		}
@@ -54,6 +56,8 @@
 			"simulation": "模拟工具",
 			"physics-simulation": "物理模拟器 (版本 1.0)",
 			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)",
+
+			"docs-i386": "Intel 80386 微处理器手册",
 
 			"body_footer_text-0": "© Hayneko. 创建于2026年1月10日。",
 			"body_footer_text-1": "此网站已重构4次。"
@@ -85,6 +89,8 @@
 			"physics-simulation": "物理模擬器 (版本 1.0)",
 			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)",
 
+			"docs-i386": "Intel 80386 微處理器手冊",
+
 			"body_footer_text-0": "© Hayneko. 建立於2026年1月10日。",
 			"body_footer_text-1": "此網站已重構4次。"
 		}
@@ -114,6 +120,8 @@
 			"simulation": "シミュレーター",
 			"physics-simulation": "物理シミュレーター (ベーター 1.0)",
 			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)",
+
+			"docs-i386": "Intel 80386 微処理器マニュアル",
 
 			"body_footer_text-0": "© Hayneko. 2026年1月10日に作成されました。",
 			"body_footer_text-1": "このサイトは4回リファクタリングされました。"
