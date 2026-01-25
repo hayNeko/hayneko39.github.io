@@ -254,7 +254,8 @@
 .dock_contact-menu,
 .dock_language-menu,
 .dock_search-menu,
-.dock_tools-menu {
+.dock_tools-menu,
+.dock_friendly-links-menu {
 	position: fixed;
 	left: 50%;
 	transform: translateX(-50%);
@@ -284,7 +285,8 @@
 .dock_contact-menu.show,
 .dock_language-menu.show,
 .dock_search-menu.show,
-.dock_tools-menu.show {
+.dock_tools-menu.show,
+.dock_friendly-links-menu.show {
 	/* transform: translateY(-50px) translateX(0); */
 	animation: dock_menu_pop_up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 	opacity: 1;
@@ -431,6 +433,15 @@
 
 .dock_tools_list a:hover {
 	background: var(--dock-menu-hover-bg);
+}
+
+.dock_friendly-links-menu li {
+	padding: 8px 10px;
+	color: var(--text-color-primary);
+	font-size: 0.85rem;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+	background: transparent;
 }
 
 

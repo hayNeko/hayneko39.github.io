@@ -6,7 +6,7 @@ const DEFAULT_LANGUAGE_DATA = {
 			"album": "Album",
 			"about": "About",
 			"projects": "Projects",
-			"contact": "Contact",
+			"friendly-links": "Friendly Links",
 			"language": "Language",
 			"switch-theme": "Switch Theme",
 			"search": "Search",

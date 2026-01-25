@@ -138,6 +138,21 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- friendly links -->
+	<div class="dock_friendly-links-menu" id="dock_friendly-links">
+		<div class="dock_menu_header">
+			<i class="fa-solid fa-link"></i>
+			<span data-i18n="friendly-links">Friendly Links</span>
+		</div>
+		<menu class="dock_menu_content">
+			<!-- <li class="dock_menu_option" onclick="javascript:;">
+				<a href="#" target="_blank" rel="noopener noreferrer" data-i18n="friendly-link-1">Friendly Link 1</a>
+			</li> -->
+			<li><p data-i18n="no-friendly-link">No friendly links available at the moment. Contact me to add your link.</p></li>
+		</menu>
+	</div>
+
 </div>
 <!-- end menu system -->
 
@@ -153,9 +168,9 @@
 
 	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
 	<p class="dock_boxes" id="album" data-i18n-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
-	<p class="dock_boxes" id="about"  data-i18n-tooltip="about" onclick="javascript:HandleDockClickEvent_About();"><i class="fa-solid fa-user"></i></p>
+	<p class="dock_boxes" id="friendly-links" data-i18n-tooltip="friendly-links" onclick="javascript:HandleDockClickEvent_FriendlyLinks(event);"><i class="fa-solid fa-link"></i></p>
 	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
-	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact();"><i class="fa-solid fa-comment"></i></p>
+	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact(event);"><i class="fa-solid fa-comment"></i></p>
 	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language(event);"><i class="fa-solid fa-globe"></i></p>
 	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch-theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
 	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
@@ -247,12 +262,14 @@ if ('serviceWorker' in navigator) {
 	function HandleDockClickEvent_Album() {
 		// window.location.href = "#";
 	}
-	function HandleDockClickEvent_About() {
+	function HandleDockClickEvent_FriendlyLinks(event) {
+		event.stopPropagation();
+		ToggleMenu("dock_friendly-links");
 	}
 	function HandleDockClickEvent_Projects() {
 		window.open("https://github.com/hayNeko", "_blank");
 	}
-	function HandleDockClickEvent_Contact() {
+	function HandleDockClickEvent_Contact(event) {
 		event.stopPropagation();
 		ToggleMenu("dock_contact");
 	}
