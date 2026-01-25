@@ -1,6 +1,6 @@
 const DEFAULT_LANGUAGE_DATA = {
-	'en': {
-		name: 'English',
+	"en": {
+		"name": "English",
 		"translations": {
 			"home": "Home",
 			"album": "Album",
@@ -9,16 +9,27 @@ const DEFAULT_LANGUAGE_DATA = {
 			"contact": "Contact",
 			"language": "Language",
 			"switch-theme": "Switch Theme",
-			"search": "Search (Not Available Yet)",
+			"search": "Search",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",
 			"title_leave-message": "Miku! Come back soon to ",
+			"login": "Login",
 
-			"construction": "NEW SITE IS UNDER CONSTRUCTION",
+			"construction": "New Site Under Construction",
+			
+			"contact-via-github": "Contact me on GitHub",
+			"contact-via-instagram": "Contact me on Instagram",
+			
+			"no-tools-available": "No tools available at the moment.",
+			"simulation": "Simulations",
+			"physics-simulation": "Physics Simulation (Version 1.0)",
+			"physics-simulation-newtoon-second-law": "Newton's Second Law Simulation (Version 1.0)",
 
-			"no-tools-available": "No tools available.",
-			"physics-simulation": "Physics Simulation (Verson 1.0)",
-			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)"
+			"docs": "Useful Documents",
+			"docs-i386": "Intel 80386 Programmer's Reference Manual",
+
+			"body_footer_text-0": "© Hayneko. Created on Jan 10, 2026.",
+			"body_footer_text-1": "This site has been refactored 4 times."
 		}
 	},
 	languages: ['en']

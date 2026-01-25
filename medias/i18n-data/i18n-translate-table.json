@@ -9,23 +9,24 @@
 			"contact": "Contact",
 			"language": "Language",
 			"switch-theme": "Switch Theme",
-			"search": "Search (Not Available Yet)",
+			"search": "Search",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",
 			"title_leave-message": "Miku! Come back soon to ",
 			"login": "Login",
 
-			"construction": "NEW SITE IS UNDER CONSTRUCTION",
+			"construction": "New Site Under Construction",
 			
-			"contact-via-github": "Contact me via GitHub",
-			"contact-via-instagram": "Contact me via Instagram",
+			"contact-via-github": "Contact me on GitHub",
+			"contact-via-instagram": "Contact me on Instagram",
 			
-			"no-tools-available": "No tools available.",
-			"simulation": "Simulation",
-			"physics-simulation": "Physics Simulation (Verson 1.0)",
-			"physics-simulation-newtoon-second-law": "Physics Simulation of Newtoon Second Law (Verson 1.0)",
+			"no-tools-available": "No tools available at the moment.",
+			"simulation": "Simulations",
+			"physics-simulation": "Physics Simulation (Version 1.0)",
+			"physics-simulation-newton-second-law": "Newton's Second Law Simulation (Version 1.0)",
 
-			"docs-i386": "Intel 80386 Microprocessor Manual",
+			"docs": "Useful Documents",
+			"docs-i386": "Intel 80386 Programmer's Reference Manual",
 
 			"body_footer_text-0": "© Hayneko. Created on Jan 10, 2026.",
 			"body_footer_text-1": "This site has been refactored 4 times."
@@ -41,26 +42,27 @@
 			"contact": "联系",
 			"language": "语言",
 			"switch-theme": "切换主题",
-			"search": "搜索 (尚未可用)",
+			"search": "搜索",
 			"tools": "工具",
 			"title": "Hayneko的博客",
-			"title_leave-message": "Miku! Come back soon to ",
+			"title_leave-message": "Miku! 快回来看看 ",
 			"login": "登录",
 
-			"construction": "新网站建设中",
+			"construction": "网站正在建设中",
 
-			"contact-via-github": "通过 GitHub 联系我",
-			"contact-via-instagram": "通过 Instagram 联系我",
+			"contact-via-github": "通过GitHub联系我",
+			"contact-via-instagram": "通过Instagram联系我",
 
-			"no-tools-available": "没有可用的工具。",
+			"no-tools-available": "暂无可用工具",
 			"simulation": "模拟工具",
-			"physics-simulation": "物理模拟器 (版本 1.0)",
-			"physics-simulation-newtoon-second-law": "牛顿第二定律物理模拟器 (版本 1.0)",
+			"physics-simulation": "物理模拟器 (版本1.0)",
+			"physics-simulation-newton-second-law": "牛顿第二定律模拟器 (版本1.0)",
 
-			"docs-i386": "Intel 80386 微处理器手册",
+			"docs": "实用文档",
+			"docs-i386": "Intel 80386编程参考手册",
 
-			"body_footer_text-0": "© Hayneko. 创建于2026年1月10日。",
-			"body_footer_text-1": "此网站已重构4次。"
+			"body_footer_text-0": "© Hayneko. 创建于2026年1月10日",
+			"body_footer_text-1": "本网站已重构4次"
 		}
 	},
 	"zh-TW": {
@@ -73,26 +75,27 @@
 			"contact": "聯絡",
 			"language": "語言",
 			"switch-theme": "切換主題",
-			"search": "搜尋 (尚未可用)",
+			"search": "搜尋",
 			"tools": "工具",
 			"title": "Hayneko的部落格",
-			"title_leave-message": "Miku! Come back soon to ",
+			"title_leave-message": "Miku! 快回來看看 ",
 			"login": "登入",
 
-			"construction": "新網站建設中",
+			"construction": "網站正在建置中",
 
-			"contact-via-github": "透過 GitHub 聯絡我",
-			"contact-via-instagram": "透過 Instagram 聯絡我",
+			"contact-via-github": "透過GitHub聯絡我",
+			"contact-via-instagram": "透過Instagram聯絡我",
 
-			"no-tools-available": "沒有可用的工具。",
+			"no-tools-available": "暫無可用工具",
 			"simulation": "模擬工具",
-			"physics-simulation": "物理模擬器 (版本 1.0)",
-			"physics-simulation-newtoon-second-law": "牛頓第二定律物理模擬器 (版本 1.0)",
+			"physics-simulation": "物理模擬器 (版本1.0)",
+			"physics-simulation-newton-second-law": "牛頓第二定律模擬器 (版本1.0)",
 
-			"docs-i386": "Intel 80386 微處理器手冊",
+			"docs": "實用文件",
+			"docs-i386": "Intel 80386程式設計參考手冊",
 
-			"body_footer_text-0": "© Hayneko. 建立於2026年1月10日。",
-			"body_footer_text-1": "此網站已重構4次。"
+			"body_footer_text-0": "© Hayneko. 建立於2026年1月10日",
+			"body_footer_text-1": "本網站已重構4次"
 		}
 	},
 	"ja": {
@@ -100,31 +103,32 @@
 		"translations": {
 			"home": "ホーム",
 			"album": "アルバム",
-			"about": "約",
+			"about": "自己紹介",
 			"projects": "プロジェクト",
 			"contact": "連絡先",
 			"language": "言語",
-			"switch-theme": "テーマを切り替える",
-			"search": "検索 （まだ利用できません）",
+			"switch-theme": "テーマ切替",
+			"search": "検索",
 			"tools": "ツール",
 			"title": "Haynekoのブログ",
-			"title_leave-message": "Miku! Come back soon to ",
+			"title_leave-message": "ミク！また見に来てね ",
 			"login": "ログイン",
 
-			"construction": "新しいサイトは建設中です",
+			"construction": "サイト準備中",
 
-			"contact-via-github": "GitHubを通じて私に連絡してください",
-			"contact-via-instagram": "Instagramを通じて私に連絡してください",
+			"contact-via-github": "GitHubで連絡",
+			"contact-via-instagram": "Instagramで連絡",
 
-			"no-tools-available": "利用可能なツールはありません。",
-			"simulation": "シミュレーター",
-			"physics-simulation": "物理シミュレーター (ベーター 1.0)",
-			"physics-simulation-newtoon-second-law": "ニュートンの第二法則物理シミュレーター (ベーター 1.0)",
+			"no-tools-available": "利用可能なツールはありません",
+			"simulation": "シミュレーション",
+			"physics-simulation": "物理シミュレーター (バージョン1.0)",
+			"physics-simulation-newton-second-law": "ニュートンの第2法則シミュレーター (バージョン1.0)",
 
-			"docs-i386": "Intel 80386 微処理器マニュアル",
+			"docs": "便利なドキュメント",
+			"docs-i386": "Intel 80386プログラマーズリファレンスマニュアル",
 
-			"body_footer_text-0": "© Hayneko. 2026年1月10日に作成されました。",
-			"body_footer_text-1": "このサイトは4回リファクタリングされました。"
+			"body_footer_text-0": "© Hayneko. 2026年1月10日作成",
+			"body_footer_text-1": "このサイトは4回リファクタリングされました"
 		}
 	},
 	"languages": ["en", "zh-CN", "zh-TW", "ja"]
