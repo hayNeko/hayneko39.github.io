@@ -30,6 +30,10 @@
 	--selection: #52D3DC;
 	--html-bg-color: #07080F;
 	--header-background-color: #1E1E1E3F;
+	--info-background-color: #1E1E1E1F;
+	--code-area-bg-color: #0F0E11;
+	--code-area-heading-bg-color: #1E1E1E;
+
 
 	/* dock colors */
 	--dock-bg-color: #2C2C2C8C;
@@ -73,6 +77,7 @@ html.light-theme {
 	--selection: #B4C6FD;
 	--html-bg-color: #EDEFFA;
 	--header-background-color: #F0F8F03F;
+	--info-background-color: #F0F8F01F;
 
 	/* dock colors */
 	--dock-bg-color: #F0F8F03F;
@@ -103,6 +108,10 @@ html.light-theme {
 
 .not-allowed {
 	cursor: not-allowed;
+}
+
+a {
+	color: var(--text-color-primary);
 }
 
 a:not(.not-link) {
@@ -171,4 +180,28 @@ strong {
 }
 *, *::before, *::after {
 	font-family: inherit;
+}
+
+hr {
+	border-top: 1px solid var(--text-color-primary);
+}
+
+.code-illustration {
+	color: var(--general-text-color);
+	font-family: monospace;
+	word-wrap: break-word;
+}
+
+.code-illustration > pre {
+	width: 100%;
+}
+
+.code-area-heading {
+	background-color: var(--code-area-heading-bg-color);
+	font-size: 0.9rem;
+}
+
+.code-area {
+	background-color: var(--code-area-bg-color);
+	font-size: 0.75rem;
 }

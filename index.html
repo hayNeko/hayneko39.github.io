@@ -40,8 +40,52 @@
 <main>
 	<!-- <h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1> -->
 
-	<aside class=""></aside>
-	<section class=""></section>
+	<aside class="info">
+		<figure class="info_avatar">
+			<img src="medias/picures/avatarMikuHatsune1.jpg" alt="avatar" class="info_avatar protected-media">
+			<figcaption class="info_avatar_name">Hayneko</figcaption>
+		</figure>
+		<section class="info_section">
+			<hr>
+			<!-- <p class="info_section_text">Email: <a href="mailto:haydenwong825@gmail.com">haydenwong825@gmail.com</a></p>
+			<p class="info_section_text" data-i18n="info_hobbies">Hobbies: Music, Anime, Programming</p>
+			<p class="info_section_text" data-i18n="info_games">Games: Minecraft, Genshin Impact</p> -->
+			<span class="info_section_text" data-i18n="info_email">Email: </span>
+			<span class="info_section_text-value">
+				<a href="mailto:haydenwong825@gmail.com" class="not-link">haydenwong825@gmail.com</a>
+			</span>
+
+			<span class="info_section_text" data-i18n="info_hobbies">Hobbies: </span>
+			<span class="info_section_text-value" data-i18n="info_hobbies_content">Music, Anime, Programming</span>
+
+			<span class="info_section_text" data-i18n="info_games">Games: </span>
+			<span class="info_section_text-value" data-i18n="info_games_content">Minecraft, Genshin Impact</span>
+		</section>
+		<!-- <h3 class="info_code_title" data-i18n="info_code_title">Introduction</h3> -->
+		<!-- <section class="code-illustration">
+<span class="info_code code-area-heading">C++</span>
+<pre class="info_code code-area" data-i18n="info_code">
+struct Hayneko {
+  std::string name = "Hayneko";
+  std::string email = "haydenwong825@gmail.com";
+  std::string hobbies[3] = {
+    "Music", "Anime", "Programming"
+  };
+  std::string games[2] = {
+    "Minecraft", "Genshin Impact"
+  };
+  uint16_t age = 18;
+}
+
+</pre>
+</section> -->
+	</aside>
+	
+	<article class="">
+		<section class="">
+
+		</section>
+	</article>
 	<!-- <strong>A sample strong tag.</strong> -->
 
 
@@ -161,10 +205,10 @@
 <!-- end login modal -->
 
 <!-- dock -->
-<section class="dock">
-	<div class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
+<nav class="dock">
+	<figure class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
 		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-	</div>
+	</figure>
 
 	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
 	<p class="dock_boxes" id="album" data-i18n-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
@@ -176,7 +220,7 @@
 	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
 	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools(event);"><i class="fa-solid fa-wrench"></i></p>
 
-</section>
+</nav>
 <!-- end dock -->
 
 <!-- waifu -->
@@ -311,9 +355,6 @@ if ('serviceWorker' in navigator) {
 
 <!-- title -->
 <script>
-	let originalTitle = document.title;
-	let leaveMessage = "Miku! ";
-
 	document.addEventListener('DOMContentLoaded', async function() {
 		// 等待语言系统初始化
 		await InitializeLanguageSystem();

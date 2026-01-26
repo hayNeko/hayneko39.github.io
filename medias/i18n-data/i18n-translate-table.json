@@ -31,7 +31,13 @@
 			"no-friendly-link": "No friendly links available at the moment. Contact me to add your link.",
 
 			"body_footer_text-0": "© Hayneko. Created on Jan 10, 2026.",
-			"body_footer_text-1": "This site has been refactored 4 times."
+			"body_footer_text-1": "This site has been refactored 4 times.",
+
+			"info_email": "Email",
+			"info_hobbies": "Hobbies",
+			"info_games": "Games",
+			"info_hobbies_content": "Music, Anime, Programming",
+			"info_games_content": "Minecraft, Genshin Impact"
 		}
 	},
 	"zh-CN": {
@@ -66,7 +72,13 @@
 			"no-friendly-link": "暂无友情链接。联系我以便添加您的网站链接。",
 
 			"body_footer_text-0": "© Hayneko. 创建于2026年1月10日",
-			"body_footer_text-1": "本网站已重构4次"
+			"body_footer_text-1": "本网站已重构4次",
+
+			"info_email": "邮箱",
+			"info_hobbies": "兴趣",
+			"info_games": "游戏",
+			"info_hobbies_content": "音乐、动漫、编程",
+			"info_games_content": "Minecraft、原神"
 		}
 	},
 	"zh-TW": {
@@ -101,7 +113,13 @@
 			"no-friendly-link": "暫無友情連結。聯絡我以便添加您的網站連結。",
 
 			"body_footer_text-0": "© Hayneko. 建立於2026年1月10日",
-			"body_footer_text-1": "本網站已重構4次"
+			"body_footer_text-1": "本網站已重構4次",
+
+			"info_email": "電子郵件",
+			"info_hobbies": "興趣",
+			"info_games": "遊戲",
+			"info_hobbies_content": "音樂、動漫、程式編寫",
+			"info_games_content": "Minecraft、原神"
 		}
 	},
 	"ja": {
@@ -136,7 +154,13 @@
 			"no-friendly-link": "友情リンクはありません。連絡して友情リンクを追加してください。",
 
 			"body_footer_text-0": "© Hayneko. 2026年1月10日作成",
-			"body_footer_text-1": "このサイトは4回リファクタリングされました"
+			"body_footer_text-1": "このサイトは4回リファクタリングされました",
+
+			"info_email": "電子メール",
+			"info_hobbies": "趣味",
+			"info_games": "ゲーム",
+			"info_hobbies_content": "音楽、アニメ、プログラム作成",
+			"info_games_content": "Minecraft、原神"
 		}
 	},
 	"languages": ["en", "zh-CN", "zh-TW", "ja"]
