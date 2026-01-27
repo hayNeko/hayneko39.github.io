@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Hayneko's first blog!">
-	<meta name="keyword" content="Hayneko, blog, web development, haynekogithubio, acg, programmer, hayneko的博客, 博客, 个人网站, 个人博客, 二次元, 动画, 音乐, miku">
+	<!-- <meta name="description" content="Hayneko's first blog!"> -->
+	<!-- <meta name="keyword" content="Hayneko, blog, web development, haynekogithubio, acg, programmer, hayneko的博客, 博客, 个人网站, 个人博客, 二次元, 动画, 音乐, miku"> -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-	<title>Hayneko's blog</title>
+	<title>Hayneko's blog | Storage List</title>
 
 	<link rel="manifest" href="manifest.json">
 	
@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="medias/css/index.css">
 	<link rel="stylesheet" href="medias/css/dock.css">
 	<link rel="stylesheet" href="medias/css/main-page.css">
+	<link rel="stylesheet" href="medias/css/main-page_storage.css">
 
 	
 </head>
@@ -32,72 +33,37 @@
 <header class="body_header">
 	<a href="index.html" class="body_header_anchor not-link">
 		<img class="body_header_logo protected-media" src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
-		<h1 class="body_header_title" data-i18n="title">Hayneko's blog</h1>
+		<h1 class="body_header_title" data-i18n="title-storage">Hayneko's blog | Storage List</h1>
 	</a>
 
-	<button class="body_header_menu_login-button" id="body_header_menu_login-button" data-i18n="login" onclick="javascript:ToggleMenu('dock_menu_header_login-menu');">Login</button>
 </header>
+
+<!-- No data-i18n (translate table) provided -->
 <main>
-	<!-- <h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1> -->
+	<h2 class="storage_list_title">Storage List</h2>
 
-	<aside class="info">
-		<figure class="info_avatar">
-			<img src="medias/picures/avatarMikuHatsune1.jpg" alt="avatar" class="info_avatar protected-media">
-			<figcaption class="info_avatar_name">Hayneko</figcaption>
-		</figure>
-		<section class="info_section">
-			<hr>
-			<!-- <p class="info_section_text">Email: <a href="mailto:haydenwong825@gmail.com">haydenwong825@gmail.com</a></p>
-			<p class="info_section_text" data-i18n="info_hobbies">Hobbies: Music, Anime, Programming</p>
-			<p class="info_section_text" data-i18n="info_games">Games: Minecraft, Genshin Impact</p> -->
-			<span class="info_section_text" data-i18n="info_email">Email: </span>
-			<span class="info_section_text-value">
-				<a href="mailto:haydenwong825@gmail.com" class="not-link">haydenwong825@gmail.com</a>
-			</span>
+	<menu class="storage_list_menu-storage-list">
+		<h3 class="storage_list_menu_title">Game Storage</h3>
+		<li class="storage_list_menu_item">
+			<a href="./medias/files/games/PVP.zip" target="_blank" rel="noopener noreferrer">Minecraft 1.21.1 (Java Edition) PvP Map (with dapapack inside) (updated on 2026-1-27)</a>
+		</li>
+	</menu>
 
-			<span class="info_section_text" data-i18n="info_hobbies">Hobbies: </span>
-			<span class="info_section_text-value" data-i18n="info_hobbies_content">Music, Anime, Programming</span>
+	<menu class="storage_list_menu-storage-list">
+		<h3 class="storage_list_menu_title">Other Storage</h3>
+		<li class="storage_list_menu_item">
+			<a href="./medias/files/programming/nlohmann_json.hpp" target="_blank" rel="noopener noreferrer">nlohmann/json.hpp version 3.12.0 | JSON for Modern C++ (updated on 2026-1-27)</a>
+		</li>
+	</menu>
 
-			<span class="info_section_text" data-i18n="info_games">Games: </span>
-			<span class="info_section_text-value" data-i18n="info_games_content">Minecraft, Genshin Impact</span>
-		</section>
-		<!-- <h3 class="info_code_title" data-i18n="info_code_title">Introduction</h3> -->
-		<!-- <section class="code-illustration">
-<span class="info_code code-area-heading">C++</span>
-<pre class="info_code code-area" data-i18n="info_code">
-struct Hayneko {
-  std::string name = "Hayneko";
-  std::string email = "haydenwong825@gmail.com";
-  std::string hobbies[3] = {
-    "Music", "Anime", "Programming"
-  };
-  std::string games[2] = {
-    "Minecraft", "Genshin Impact"
-  };
-  uint16_t age = 18;
-}
-
-</pre>
-</section> -->
-	</aside>
-	
-	<article class="">
-		<section class="">
-
-		</section>
-	</article>
-	<!-- <strong>A sample strong tag.</strong> -->
-
+	<menu class="storage_list_menu-storage-list">
+		<h3 class="storage_list_menu_title" data-i18n="no-more-file">There should be no more file available to download...</h3>
+	</menu>
 
 </main>
 
-<footer class="body_footer">
-	<p class="body_footer_text" data-i18n="body_footer_text-0">Hayneko. Created on Jan 10, 2026.</p>
-	<p class="body_footer_text" data-i18n="body_footer_text-1">This site has been refactored 4 times.</p>
 
-	<a href="https://github.com/hayNeko" target="_blank" class="body_footer_link"><i class="fa-brands fa-github"></i>GitHub</a>
 
-</footer>
 
 
 <!-- menu system -->
@@ -200,9 +166,7 @@ struct Hayneko {
 </div>
 <!-- end menu system -->
 
-<!-- login modal -->
 
-<!-- end login modal -->
 
 <!-- dock -->
 <nav class="dock">
@@ -223,26 +187,6 @@ struct Hayneko {
 
 </nav>
 <!-- end dock -->
-
-<!-- waifu -->
-
-<!-- <div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" class="live2d"></canvas>
-    <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
-    </div>
-</div> -->
-
-<!-- end waifu -->
-
-
 </body>
 <!-- DOM loaded -->
 <script>
@@ -306,9 +250,6 @@ if ('serviceWorker' in navigator) {
 	}
 	function HandleDockClickEvent_Album() {
 		// window.location.href = "#";
-	}
-	function HandleDockClickEvent_Storage() {
-		window.location.href = "./storage-list.html";
 	}
 	function HandleDockClickEvent_FriendlyLinks(event) {
 		event.stopPropagation();
@@ -439,6 +380,5 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <!-- end protected media -->
-
 
 </html>

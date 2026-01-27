@@ -239,6 +239,7 @@
 .dock_boxes:nth-child(8) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.65s both; }
 .dock_boxes:nth-child(9) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.7s both; }
 .dock_boxes:nth-child(10) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.75s both; }
+.dock_boxes:nth-child(11) { animation: DockIconAppear 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.8s both; }
 /* .dock_avatar { animation: DockIconAppear 0.3s ease 0.05s both; } */
 
 /* dock menus */

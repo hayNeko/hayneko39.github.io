@@ -4,6 +4,7 @@
 		"translations": {
 			"home": "Home",
 			"album": "Album",
+			"storage": "Storage",
 			"friendly-links": "Friendly Links",
 			"projects": "Projects",
 			"contact": "Contact",
@@ -12,10 +13,12 @@
 			"search": "Search",
 			"tools": "Tools",
 			"title": "Hayneko's Blog",
+			"title-storage": "Download",
 			"title_leave-message": "Miku! Come back soon to ",
 			"login": "Login",
 
 			"construction": "New Site Under Construction",
+			"no-more-file": "There should be no more file available to download...",
 			
 			"contact-via-github": "Contact me on GitHub",
 			"contact-via-instagram": "Contact me on Instagram",
@@ -45,6 +48,7 @@
 		"translations": {
 			"home": "首页",
 			"album": "相册",
+			"storage": "资源下载",
 			"friendly-links": "友情链接",
 			"projects": "项目",
 			"contact": "联系",
@@ -53,10 +57,12 @@
 			"search": "搜索",
 			"tools": "工具",
 			"title": "Hayneko的博客",
+			"title-storage": "资源下载",
 			"title_leave-message": "Miku! 快回来看看 ",
 			"login": "登录",
 
 			"construction": "网站正在建设中",
+			"no-more-file": "没有更多文件可供下载。",
 
 			"contact-via-github": "通过GitHub联系我",
 			"contact-via-instagram": "通过Instagram联系我",
@@ -86,6 +92,7 @@
 		"translations": {
 			"home": "首頁",
 			"album": "相簿",
+			"storage": "資源下載",
 			"friendly-links": "友情連結",
 			"projects": "專案",
 			"contact": "聯絡",
@@ -94,10 +101,12 @@
 			"search": "搜尋",
 			"tools": "工具",
 			"title": "Hayneko的部落格",
+			"title-storage": "資源下載",
 			"title_leave-message": "Miku! 快回來看看 ",
 			"login": "登入",
 
 			"construction": "網站正在建置中",
+			"no-more-file": "沒有更多檔案可供下載。",
 
 			"contact-via-github": "透過GitHub聯絡我",
 			"contact-via-instagram": "透過Instagram聯絡我",
@@ -127,6 +136,7 @@
 		"translations": {
 			"home": "ホーム",
 			"album": "アルバム",
+			"storage": "ストレージ",
 			"friendly-links": "友情リンク",
 			"projects": "プロジェクト",
 			"contact": "連絡先",
@@ -135,10 +145,12 @@
 			"search": "検索",
 			"tools": "ツール",
 			"title": "Haynekoのブログ",
+			"title-storage": "ダウンロード",
 			"title_leave-message": "ミク！また見に来てね ",
 			"login": "ログイン",
 
 			"construction": "サイト準備中",
+			"no-more-file": "ファイルはもうありません。",
 
 			"contact-via-github": "GitHubで連絡",
 			"contact-via-instagram": "Instagramで連絡",

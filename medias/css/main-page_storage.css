@@ -1,0 +1,47 @@
+@import url("./root.css");
+
+main {
+	display: flex;
+	/* align-items: center; */
+	flex-direction: column;
+	/* justify-content: center; */
+	width: 95vw;
+	position: relative;
+	background-color: var(--dock-menu-hover-bg);
+	border: 1px solid var(--border-color-primary);
+	border-radius: 15px;
+	color: var(--text-color-primary);
+	font-size: 0.875rem;
+	overflow: hidden;
+	z-index: var(--index-very-top);
+	top: 2vh;
+	bottom: 10vh;
+	left: 2.5vw;
+	right: 2.5vw;
+}
+
+.storage_list_title {
+	margin-top: 2vh;
+	font-size: 2em;
+	text-align: center;
+	border-bottom: 1px solid var(--border-color-primary);
+	padding-bottom: 1vh;
+}
+
+.storage_list_menu_title {
+	margin-top: 1vh;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.storage_list_menu-storage-list {
+	margin-top: 1vh;
+	font-size: 1.3em;
+	list-style: square;
+	padding-left: 3vw;
+}
+
+.storage_list_menu_item {
+	margin-top: 1vh;
+	font-size: 1em;
+}
