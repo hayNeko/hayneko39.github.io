@@ -202,6 +202,14 @@ LanguageManager.SetLanguage = function(langCode) {
 		
 		// 更新HTML的lang属性
 		document.documentElement.lang = this.currentLanguage;
+		
+		// 更新页面语言
+		UpdatePageLanguage();
+		
+		// 触发语言变化事件
+		const event = new CustomEvent('languageChanged', { detail: { language: this.currentLanguage } });
+		document.dispatchEvent(event);
+		
 		return true;
 	}
 	return false;
