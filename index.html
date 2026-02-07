@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="medias/css/index.css">
 	<link rel="stylesheet" href="medias/css/dock.css">
 	<link rel="stylesheet" href="medias/css/main-page.css">
+	<link rel="stylesheet" href="medias/css/articles.css">
 
 	
 </head>
@@ -51,9 +52,7 @@
 			<p class="info_section_text" data-i18n="info_hobbies">Hobbies: Music, Anime, Programming</p>
 			<p class="info_section_text" data-i18n="info_games">Games: Minecraft, Genshin Impact</p> -->
 			<span class="info_section_text" data-i18n="info_email">Email: </span>
-			<span class="info_section_text-value">
-				<a href="mailto:haydenwong825@gmail.com" class="not-link">haydenwong825@gmail.com</a>
-			</span>
+			<span class="info_section_text-value"><a href="mailto:haydenwong825@gmail.com" class="not-link">haydenwong825@gmail.com</a></span>
 
 			<span class="info_section_text" data-i18n="info_hobbies">Hobbies: </span>
 			<span class="info_section_text-value" data-i18n="info_hobbies_content">Music, Anime, Programming</span>
@@ -81,9 +80,9 @@ struct Hayneko {
 </section> -->
 	</aside>
 	
-	<article class="">
-		<section class="">
-
+	<article class="main-article">
+		<section class="article-list-container" id="article-list-container">
+			
 		</section>
 	</article>
 	<!-- <strong>A sample strong tag.</strong> -->
@@ -113,8 +112,8 @@ struct Hayneko {
 				<i class="fa-brands fa-github"></i>
 				<span data-i18n="contact-via-github">Contact me via GitHub</span>
 			</li>
-			<li class="dock_menu_option">
-				<i class="fa-brands fa-instagram" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/www.instagram.com/hayneko_dword/');"></i>
+			<li class="dock_menu_option" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/www.instagram.com/hayneko_dword/');">
+				<i class="fa-brands fa-instagram"></i>
 				<span data-i18n="contact-via-instagram">Contact me via Instagram</span>
 			</li>
 		</menu>
@@ -127,19 +126,19 @@ struct Hayneko {
 			<span data-i18n="language">Language</span>
 		</div>
 		<menu class="dock_menu_content">
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('en')">
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('en');window.location.reload();">
 				<span>English</span>
 				<i class="fa-solid fa-check check-icon"></i>
 			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-CN')">
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-CN');window.location.reload();">
 				<span>中文(简体)</span>
 				<i class="fa-solid fa-check check-icon"></i>
 			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-TW')">
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-TW');window.location.reload();">
 				<span>中文(繁體)</span>
 				<i class="fa-solid fa-check check-icon"></i>
 			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('ja')">
+			<li class="dock_menu_option" onclick="javascript:SetLanguage('ja');window.location.reload();">
 				<span>日本語</span>
 				<i class="fa-solid fa-check check-icon"></i>
 			</li>
@@ -285,6 +284,7 @@ if ('serviceWorker' in navigator) {
 <!-- dock avatar particle -->
 <script src="medias/scripts/CreateParticle.js"></script>
 <!-- end dock avatar particle -->
+<script src="medias/scripts/MainContent.js"></script>
 
 <!-- dock links handler -->
 <script>

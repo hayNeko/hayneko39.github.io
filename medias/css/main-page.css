@@ -83,7 +83,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: clamp(250px, 17.5vw, 300px);
-	margin-top: 10vh;
+	margin-top: 5vh;
 	margin-bottom: 50vh;
 	margin-left: 1vw;
 	background-color: var(--info-background-color);
