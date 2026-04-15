@@ -9,30 +9,29 @@
 		
 	<title>Hayneko's blog</title>
 
-	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="/manifest.json">
 	
 	<!-- 对于 iOS -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 	
-	<link rel="icon" href="medias/picures/miku.JPG" sizes="32x32">
+	<link rel="icon" href="/medias/picures/miku.JPG" sizes="32x32">
 
 	<!-- css waifu -->
 	<!-- <link rel="stylesheet" href="live2dqw/assets/waifu.css"> -->
 
 	<!-- css -->
-	<link rel="stylesheet" href="medias/css/index.css">
-	<link rel="stylesheet" href="medias/css/dock.css">
-	<link rel="stylesheet" href="medias/css/main-page.css">
-	<link rel="stylesheet" href="medias/css/articles.css">
+	<link rel="stylesheet" href="/medias/css/index.css">
+	<link rel="stylesheet" href="/medias/css/dock.css">
+	<link rel="stylesheet" href="/medias/css/main-page.css">
 
 	
 </head>
 <body>
 
 <header class="body_header">
-	<a href="index.html" class="body_header_anchor not-link">
-		<img class="body_header_logo protected-media" src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
+	<a href="/index.html" class="body_header_anchor not-link">
+		<img class="body_header_logo protected-media" src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
 		<h1 class="body_header_title" data-i18n="title">Hayneko's blog</h1>
 	</a>
 
@@ -43,7 +42,7 @@
 
 	<aside class="info">
 		<figure class="info_avatar">
-			<img src="medias/picures/avatarMikuHatsune1.jpg" alt="avatar" class="info_avatar protected-media">
+			<img src="/medias/picures/avatarMikuHatsune1.jpg" alt="avatar" class="info_avatar protected-media">
 			<figcaption class="info_avatar_name">Hayneko</figcaption>
 		</figure>
 		<section class="info_section">
@@ -60,32 +59,8 @@
 			<span class="info_section_text" data-i18n="info_games">Games: </span>
 			<span class="info_section_text-value" data-i18n="info_games_content">Minecraft, Genshin Impact</span>
 		</section>
-		<!-- <h3 class="info_code_title" data-i18n="info_code_title">Introduction</h3> -->
-		<!-- <section class="code-illustration">
-<span class="info_code code-area-heading">C++</span>
-<pre class="info_code code-area" data-i18n="info_code">
-struct Hayneko {
-  std::string name = "Hayneko";
-  std::string email = "haydenwong825@gmail.com";
-  std::string hobbies[3] = {
-    "Music", "Anime", "Programming"
-  };
-  std::string games[2] = {
-    "Minecraft", "Genshin Impact"
-  };
-  uint16_t age = 18;
-}
-
-</pre>
-</section> -->
 	</aside>
 	
-	<article class="main-article">
-		<section class="article-list-container" id="article-list-container">
-			
-		</section>
-	</article>
-	<!-- <strong>A sample strong tag.</strong> -->
 
 
 </main>
@@ -171,12 +146,12 @@ struct Hayneko {
 			<div class="dock_tools_section">
 				<h3 class="dock_tools_title" data-i18n="simulation">Simulation</h3>
 				<ul class="dock_tools_list">
-					<li><a href="./physics_simulation.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation" class="not-link">Physics Simulation</a></li>
-					<li><a href="./physics-simulation_Newton-second-law.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation-newton-second-law" class="not-link">Physics Simulation (Newton Second Law)</a></li>
+					<li><a href="/pages/physics-sim/phy-default/" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation" class="not-link">Physics Simulation</a></li>
+					<li><a href="/pages/physics-sim/phy-ntlaw2/" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation-newton-second-law" class="not-link">Physics Simulation (Newton Second Law)</a></li>
 				</ul>
 				<h3 class="dock_tools_title" data-i18n="docs">Useful Docs</h3>
 				<ul class="dock_tools_list">
-					<li><a href="./medias/i386.pdf" target="_blank" rel="noopener noreferrer" data-i18n="docs-i386" class="not-link">INTEL 80386 PROGRAMMER'S REFERENCE MANUAL 1986</a></li>
+					<li><a href="/medias/i386.pdf" target="_blank" rel="noopener noreferrer" data-i18n="docs-i386" class="not-link">INTEL 80386 PROGRAMMER'S REFERENCE MANUAL 1986</a></li>
 				</ul>
 			</div>
 		</div>
@@ -206,7 +181,7 @@ struct Hayneko {
 <!-- dock -->
 <nav class="dock">
 	<figure class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
-		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
+		<img src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
 	</figure>
 
 	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
@@ -282,9 +257,8 @@ if ('serviceWorker' in navigator) {
 <!-- end service worker -->
 
 <!-- dock avatar particle -->
-<script src="medias/scripts/CreateParticle.js"></script>
+<script src="/medias/scripts/CreateParticle.js"></script>
 <!-- end dock avatar particle -->
-<script src="medias/scripts/MainContent.js"></script>
 
 <!-- dock links handler -->
 <script>
@@ -302,13 +276,13 @@ if ('serviceWorker' in navigator) {
 	}
 
 	function HandleDockClickEvent_Home() {
-		window.location.href = "index.html";
+		window.location.href = "/index.html";
 	}
 	function HandleDockClickEvent_Album() {
 		// window.location.href = "#";
 	}
 	function HandleDockClickEvent_Storage() {
-		window.location.href = "./storage-list.html";
+		window.location.href = "/pages/storage-list.html";
 	}
 	function HandleDockClickEvent_FriendlyLinks(event) {
 		event.stopPropagation();
@@ -346,15 +320,15 @@ if ('serviceWorker' in navigator) {
 <!-- end dock links handler -->
 
 <!-- language switcher -->
-<script src="medias/scripts/LanguageSwitcher.js"></script>
+<script src="/medias/scripts/LanguageSwitcher.js"></script>
 <!-- end language switcher -->
 
 <!-- theme switcher -->
-<script src="medias/scripts/ThemeSwitcher.js"></script>
+<script src="/medias/scripts/ThemeSwitcher.js"></script>
 <!-- end theme switcher -->
 
 <!-- menu system -->
-<script src="medias/scripts/DockMenuSystem.js"></script>
+<script src="/medias/scripts/DockMenuSystem.js"></script>
 <!-- end menu system -->
 
 <!-- title -->

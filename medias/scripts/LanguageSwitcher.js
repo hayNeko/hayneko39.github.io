@@ -42,7 +42,7 @@ languageOrder: ['en', 'zh-CN', 'zh-TW', 'ja'],
 
 async LoadLanguageData() {
 	try {
-		const response = await fetch('medias/i18n-data/i18n-translate-table.json');
+		const response = await fetch('/medias/i18n-data/i18n-translate-table.json');
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}

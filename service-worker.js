@@ -1,7 +1,7 @@
 // GitHub Pages Service Worker
 const APP_VERSION = '1.0.2';
 const CACHE_NAME = `hayneko-${APP_VERSION}`;
-const OFFLINE_URL = './offline.html';
+const OFFLINE_URL = '/offline.html';
 
 // 多层缓存策略配置
 const CACHE_POLICIES = {
@@ -30,14 +30,14 @@ const CACHE_POLICIES = {
 // 需要预缓存的资源（关键资源）
 const PRECACHE_RESOURCES = [
 	OFFLINE_URL,
-	'./index.html',
-	'./medias/css/root.css',
-	'./medias/css/index.css',
-	'./medias/css/main-page.css',
-	'./medias/fonts/WenYuanSerifSCC-Regular.ttf',
-	'./medias/fonts/PatuaOne-Regular.ttf',
-	'./medias/fonts/LorchinSansP0.woff2',
-	'./medias/picures/background.jpg',
+	'/index.html',
+	'/medias/css/root.css',
+	'/medias/css/index.css',
+	'/medias/css/main-page.css',
+	'/medias/fonts/WenYuanSerifSCC-Regular.ttf',
+	'/medias/fonts/PatuaOne-Regular.ttf',
+	'/medias/fonts/LorchinSansP0.woff2',
+	'/medias/picures/background.jpg',
 ];
 
 // 资源类型判断规则
