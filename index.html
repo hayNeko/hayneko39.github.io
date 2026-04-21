@@ -218,6 +218,9 @@
 
 
 </body>
+
+<script src="/medias/scripts/GeneralPages.js"></script>
+
 <!-- DOM loaded -->
 <script>
 	document.addEventListener('DOMContentLoaded', async function() {
@@ -255,164 +258,18 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <!-- end service worker -->
-
-<!-- dock avatar particle -->
-<script src="/medias/scripts/CreateParticle.js"></script>
-<!-- end dock avatar particle -->
-
 <!-- dock links handler -->
-<script>
-	function HandleDockClickEvent_EmmitParticle() {
-		EmmitParticle();
-
-		// for debugging
-		// caches.delete('hayneko-blog-cache-v1').then(() => {
-		// 	console.log('Cache cleared');
-		// });
-
-	}
-	function HandleDockClickEvent_Contact_Via(url) {
-		window.open(url, "_blank");
-	}
-
-	function HandleDockClickEvent_Home() {
-		window.location.href = "/index.html";
-	}
-	function HandleDockClickEvent_Album() {
-		// window.location.href = "#";
-	}
-	function HandleDockClickEvent_Storage() {
-		window.location.href = "/pages/storage-list.html";
-	}
-	function HandleDockClickEvent_FriendlyLinks(event) {
-		event.stopPropagation();
-		ToggleMenu("dock_friendly-links");
-	}
-	function HandleDockClickEvent_Projects() {
-		window.open("https://github.com/hayNeko", "_blank");
-	}
-	function HandleDockClickEvent_Contact(event) {
-		event.stopPropagation();
-		ToggleMenu("dock_contact");
-	}
-	function HandleDockClickEvent_Language(event) {
-		// const oldLang = LanguageManager.currentLanguage;
-		// const newLang = LanguageManager.SwitchToNextLanguage();
-		// UpdatePageLanguage();
-		event.stopPropagation();
-		ToggleMenu("dock_language");
-	}
-	function HandleDockClickEvent_Theme() {
-		SwitchTheme();
-		// console.log("Theme switched!");
-	}
-	function HandleDockClickEvent_Search(event) {
-		// window.location.href = "#";
-		event.stopPropagation();
-		ToggleMenu("dock_search");
-	}
-	function HandleDockClickEvent_Tools(event) {
-		// window.location.href = "#";
-		event.stopPropagation();
-		ToggleMenu("dock_tools");
-	}
-</script>
-<!-- end dock links handler -->
-
-<!-- language switcher -->
+<script src="/medias/scripts/CreateParticle.js"></script>
 <script src="/medias/scripts/LanguageSwitcher.js"></script>
-<!-- end language switcher -->
-
-<!-- theme switcher -->
 <script src="/medias/scripts/ThemeSwitcher.js"></script>
-<!-- end theme switcher -->
-
-<!-- menu system -->
 <script src="/medias/scripts/DockMenuSystem.js"></script>
-<!-- end menu system -->
-
-<!-- title -->
-<script>
-	document.addEventListener('DOMContentLoaded', async function() {
-		// 等待语言系统初始化
-		await InitializeLanguageSystem();
-		
-		// 获取当前语言的离开消息
-		const langData = LanguageManager.GetCurrentLanguageData();
-		leaveMessage = langData.translations['title_leave-message'] || "Miku! ";
-		originalTitle = langData.translations['title'] || originalTitle;
-	});
-
-	document.addEventListener("visibilitychange", function () {
-		if (document.hidden) {
-			document.title = " (>_<) " + leaveMessage + originalTitle;
-		} else {
-			document.title = originalTitle;
-		}
-	});
-
-</script>
-<!-- end title -->
-
-<!-- live-2d -->
-<!-- <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
-<script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
-<script src="live2dqw/assets/waifu-tips.js"></script>
-<script src="live2dqw/assets/live2d.js"></script>
-<script type="text/javascript">
-	/* 可直接修改部分参数 */
-	live2d_settings['modelId'] = 2;                  // 默认模型 ID
-	live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
-	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
-	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
-	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-	live2d_settings['waifuSize'] = '350x300';        // 看板娘大小
-	live2d_settings['waifuTipsSize'] = '300x120';    // 提示框大小
-	live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
-	live2d_settings['waifuToolFont'] = '20px';       // 工具栏字体
-	live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
-	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-	live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
-	/* 在 initModel 前添加 */
-	initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
-</script> -->
-<!-- end live-2d -->
+<script src="/medias/scripts/DockInitializer.js"></script>
+<!-- end dock links handler -->
 
 <!-- fontawesome -->
 <script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
 <!-- end fontawesome -->
 
-<!-- protected media -->
-<script>
-	const protectedMediaElements = document.querySelectorAll('.protected-media');
-
-	protectedMediaElements.forEach(element => {
-		// 禁用右键菜单
-		element.addEventListener('contextmenu', event => {
-			event.preventDefault();
-		});
-
-		// 禁用拖拽
-		element.setAttribute('draggable', false);
-
-		// 禁用拖动
-		element.addEventListener('dragstart', event => {
-			event.preventDefault();
-		});
-
-		// 禁用复制
-		element.addEventListener('copy', event => {
-			event.preventDefault();
-		});
-
-		// 禁用长按
-		element.addEventListener('pointercancel', event => {
-			event.preventDefault();
-		});
-	});
-</script>
-
-<!-- end protected media -->
 
 
 </html>

@@ -216,3 +216,5 @@ LanguageManager.SetLanguage = function(langCode) {
 };
 
 window.LanguageManager = LanguageManager;
+window.InitializeLanguageSystem = InitializeLanguageSystem;
+window.UpdatePageLanguage = UpdatePageLanguage;

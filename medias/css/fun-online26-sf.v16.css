@@ -1,0 +1,53 @@
+@import url("root.css");
+
+main {
+	display: flex;
+	/* align-items: center; */
+	flex-direction: column;
+	/* justify-content: center; */
+	width: 95vw;
+	position: relative;
+	background-color: var(--dock-menu-hover-bg);
+	border: 1px solid var(--border-color-primary);
+	border-radius: 15px;
+	color: var(--text-color-primary);
+	font-size: 0.875rem;
+	overflow: hidden;
+	z-index: var(--index-very-top);
+	top: 2vh;
+	bottom: 10vh;
+	left: 2.5vw;
+	right: 2.5vw;
+}
+
+h1 {
+	margin: 2vh 2vw;
+	text-align: center;
+	font-size: 2em;
+	border-bottom: 1px solid var(--border-color-primary);
+	padding-bottom: 1vh;
+}
+
+code {
+	font-family: monospace;
+	font-size: 1.5rem;
+	color: var(--text-color-primary);
+	background-color: var(--dock-bg-color);
+	border-radius: 15px;
+	padding: 1vh 1vw;
+	margin: 1vh 1vw;
+}
+
+h3 {
+	margin-left: 2vw;
+	font-size: 1.3em;
+}
+
+.c {
+	margin-left: 4vw;
+}
+
+.c > li {
+	margin: 1vh 0;
+	list-style: decimal;
+}

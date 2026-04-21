@@ -41,7 +41,8 @@
 	align-items: center;
 	justify-content: center;
 	transition: var(--transition-smooth);
-	padding-right: 5px;
+	padding-right: 20px;
+	margin-left: -10px;
 	order: -1;
 }
 

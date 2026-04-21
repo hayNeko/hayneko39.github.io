@@ -61,3 +61,5 @@ function SwitchTheme() {
 		}, 300); // 让渐变持续一段时间
 	});
 }
+
+window.SwitchTheme = SwitchTheme;

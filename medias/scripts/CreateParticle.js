@@ -76,3 +76,5 @@ function EmmitParticle() {
 		avatar.classList.remove("clicked");
 	}, 300);
 }
+
+window.EmmitParticle = EmmitParticle;
