@@ -27,6 +27,7 @@
 			"simulation": "Simulations",
 			"physics-simulation": "Physics Simulation (Version 1.0)",
 			"physics-simulation-newton-second-law": "Newton's Second Law Simulation (Version 1.0)",
+			"physics-simulation-lens": "Lens Simulation (Version 1.0)",
 
 			"docs": "Useful Documents",
 			"docs-i386": "Intel 80386 Programmer's Reference Manual",
@@ -71,6 +72,7 @@
 			"simulation": "模拟工具",
 			"physics-simulation": "物理模拟器 (版本1.0)",
 			"physics-simulation-newton-second-law": "牛顿第二定律模拟器 (版本1.0)",
+			"physics-simulation-lens": "透镜模拟器 (版本1.0)",
 
 			"docs": "实用文档",
 			"docs-i386": "Intel 80386编程参考手册",
@@ -115,6 +117,7 @@
 			"simulation": "模擬工具",
 			"physics-simulation": "物理模擬器 (版本1.0)",
 			"physics-simulation-newton-second-law": "牛頓第二定律模擬器 (版本1.0)",
+			"physics-simulation-lens": "透鏡模擬器 (版本1.0)",
 
 			"docs": "實用文件",
 			"docs-i386": "Intel 80386程式設計參考手冊",
@@ -159,11 +162,12 @@
 			"simulation": "シミュレーション",
 			"physics-simulation": "物理シミュレーター (バージョン1.0)",
 			"physics-simulation-newton-second-law": "ニュートンの第2法則シミュレーター (バージョン1.0)",
-
+			"physics-simulation-lens": "透鏡シミュレーター (バージョン1.0)",
+			
 			"docs": "便利なドキュメント",
 			"docs-i386": "Intel 80386プログラマーズリファレンスマニュアル",
 
-			"no-friendly-link": "友情リンクはありません。連絡して友情リンクを追加してください。",
+			"no-friendly-link": "友情リンクはありません。連絡して友情リンクを追加してください。",
 
 			"body_footer_text-0": "© Hayneko. 2026年1月10日作成",
 			"body_footer_text-1": "このサイトは4回リファクタリングされました",

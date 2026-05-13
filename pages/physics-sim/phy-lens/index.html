@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>光学实验室 v2.2 - Hayneko's Blog</title>
+	<link rel="stylesheet" href="/medias/css/index.css">
+	<link rel="stylesheet" href="/medias/css/root.css">
+	<link rel="stylesheet" href="/medias/css/dock.css">
+	<style>
+		:root {
+			--ray-blue: #008aff; --ray-red: #ff4a4a; --ray-green: #00ff88; --obj-yellow: #F0F04A;
+		}
+		body {
+			background: var(--html-bg-color); color: var(--text-color-primary);
+			margin: 0; display: flex; justify-content: center; overflow: hidden;
+		}
+		.lab-container {
+			width: 98vw; height: 75vh; margin-top: 1vh;
+			background: var(--dock-bg-color); backdrop-filter: blur(30px) saturate(180%);
+			border: 1px solid var(--dock-border-color); border-radius: 20px;
+			display: flex; flex-direction: column; padding: 20px;
+			box-shadow: 0 20px 60px var(--dock-shadow-color);
+		}
+		#canvas-wrapper { flex-grow: 1; background: rgba(0, 0, 0, 0.3); border-radius: 12px; overflow: hidden; }
+		canvas { width: 100%; height: 100%; cursor: move; touch-action: none; }  /* 移动端触摸平滑拖动 */
+		.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+		.controls { display: flex; gap: 15px; align-items: center; }
+		.btn {
+			background: var(--dock-menu-bg-color); border: 1px solid var(--dock-border-color);
+			color: var(--text-color-primary); padding: 8px 18px; border-radius: 10px; cursor: pointer;
+		}
+		.btn.active { background: #4A9EFF; border-color: #4A9EFF; box-shadow: 0 0 15px rgba(74, 158, 255, 0.5); }
+		.status-bar { display: flex; justify-content: space-around; padding: 12px 0; font-family: monospace; opacity: 0.8; }
+	</style>
+</head>
+<body>
+
+<div class="lab-container">
+	<div class="header">
+		<div class="controls">
+			<h3 style="margin:0">透镜模拟 | 拖动黄色箭头观察光路和像</h3>
+			<button id="convex-btn" class="btn active">凸透镜</button>
+			<button id="concave-btn" class="btn">凹透镜</button>
+			<div style="margin-left:20px">焦距 f: <input type="range" id="f-slider" min="40" max="200" value="50"></div>
+			<button id="reset-btn" class="btn">重置</button>
+		</div>
+		<div id="info-badge" style="background:var(--dock-menu-active-bg); padding:5px 15px; border-radius:15px; font-size:0.9rem;">检测中...</div>
+	</div>
+
+	<div id="canvas-wrapper"><canvas id="opticsCanvas"></canvas></div>
+
+	<div class="status-bar">
+		<span id="stat-u">物距 u: --</span>
+		<span id="stat-v">像距 v: --</span>
+		<span id="stat-m">倍率 M: --</span>
+	</div>
+</div>
+
+<script>
+	const canvas = document.getElementById('opticsCanvas');
+	const ctx = canvas.getContext('2d');
+	const fSlider = document.getElementById('f-slider');
+	const infoBadge = document.getElementById('info-badge');
+	const resetBtn = document.getElementById('reset-btn');
+
+	// reset object position
+	resetBtn.onclick = () => {
+		obj.x = -200; obj.y = -150;
+	};
+
+	let f = 50;
+	let isConvex = true;
+	let obj = { x: -200, y: -150 };
+	let isDragging = false;
+
+	// ----- 移动端触摸适配 (专为移动用户轻松拖动箭头，保留全部原有鼠标逻辑) -----
+	let activeTouchId = null;          // 当前拖拽的触摸点标识符
+	let touchDragEnabled = false;      // 确保触摸拖动条件满足后才移动
+
+	function getCanvasCoordsFromClient(clientX, clientY) {
+		const rect = canvas.getBoundingClientRect();
+		const relativeX = clientX - rect.left;
+		const relativeY = clientY - rect.top;
+		const centerX = relativeX - canvas.clientWidth / 2;
+		const centerY = relativeY - canvas.clientHeight / 2;
+		return { x: centerX, y: centerY };
+	}
+
+	function canStartDragFromTouch(touchX, touchY) {
+		// 与鼠标逻辑一致: 水平方向距离物体的x坐标在100像素以内即可拖动，忽略Y方向（增强移动端易用性）
+		const mx = touchX;
+		return Math.abs(mx - obj.x) < 100;
+	}
+
+	// 触摸开始：判断是否命中箭头并启动拖拽
+	const onTouchStart = (e) => {
+		e.preventDefault();          // 防止滚动/缩放干扰，提升拖拽流畅度
+		if (e.touches.length === 0) return;
+		const touch = e.touches[0];
+		const { x: touchCenterX, y: touchCenterY } = getCanvasCoordsFromClient(touch.clientX, touch.clientY);
+		
+		if (canStartDragFromTouch(touchCenterX, touchCenterY)) {
+			isDragging = true;
+			touchDragEnabled = true;
+			activeTouchId = touch.identifier;
+			// 立即更新一次物体位置，避免手指按下时跳动
+			obj.x = Math.min(touchCenterX, -10);
+			obj.y = touchCenterY;
+		} else {
+			isDragging = false;
+			touchDragEnabled = false;
+			activeTouchId = null;
+		}
+	};
+
+	const onTouchMove = (e) => {
+		if (!isDragging || !touchDragEnabled || activeTouchId === null) return;
+		e.preventDefault();          // 阻止移动端页面滑动，保证拖拽跟手
+		
+		// 找到与起始touch相同identifier的触点
+		let matchedTouch = null;
+		for (let i = 0; i < e.touches.length; i++) {
+			if (e.touches[i].identifier === activeTouchId) {
+				matchedTouch = e.touches[i];
+				break;
+			}
+		}
+		if (!matchedTouch) return;
+		
+		const { x: newX, y: newY } = getCanvasCoordsFromClient(matchedTouch.clientX, matchedTouch.clientY);
+		// 应用边界限制 (与鼠标行为完全一致: 物体不能越过透镜中央线右侧)
+		obj.x = Math.min(newX, -10);
+		obj.y = newY;
+	};
+
+	const onTouchEnd = (e) => {
+		// 如果是当前拖拽的触摸点结束，则完全释放拖拽标志
+		if (activeTouchId !== null) {
+			let isRelevantEnd = false;
+			if (e.changedTouches) {
+				for (let i = 0; i < e.changedTouches.length; i++) {
+					if (e.changedTouches[i].identifier === activeTouchId) {
+						isRelevantEnd = true;
+						break;
+					}
+				}
+			}
+			if (isRelevantEnd) {
+				isDragging = false;
+				touchDragEnabled = false;
+				activeTouchId = null;
+			}
+		} else {
+			// 安全重置
+			isDragging = false;
+			touchDragEnabled = false;
+		}
+		// 避免影响其他触摸操作
+		e.preventDefault();
+	};
+
+	const onTouchCancel = (e) => {
+		// 触摸中断（例如系统弹窗）彻底重置拖拽状态
+		isDragging = false;
+		touchDragEnabled = false;
+		activeTouchId = null;
+		e.preventDefault();
+	};
+
+	// 添加移动端触摸事件 (保留原有鼠标事件，两者互不干扰)
+	canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+	canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+	canvas.addEventListener('touchend', onTouchEnd);
+	canvas.addEventListener('touchcancel', onTouchCancel);
+	// ------------------------------------------------------------
+
+	function resize() {
+		canvas.width = canvas.clientWidth * window.devicePixelRatio;
+		canvas.height = canvas.clientHeight * window.devicePixelRatio;
+		ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+	}
+	window.addEventListener('resize', resize);
+	resize();
+
+	canvas.onmousedown = (e) => {
+		const rect = canvas.getBoundingClientRect();
+		const mx = e.clientX - rect.left - canvas.clientWidth/2;
+		if (Math.abs(mx - obj.x) < 100) isDragging = true;
+	};
+	window.onmouseup = () => isDragging = false;
+	window.onmousemove = (e) => {
+		if (!isDragging) return;
+		const rect = canvas.getBoundingClientRect();
+		obj.x = Math.min(e.clientX - rect.left - canvas.clientWidth/2, -10);
+		obj.y = e.clientY - rect.top - canvas.clientHeight/2;
+	};
+
+	function drawArrow(x, y1, y2, color, isDash = false) {
+		ctx.save();
+		ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 4;
+		if (isDash) ctx.setLineDash([8, 6]);
+		ctx.beginPath(); ctx.moveTo(x, y1); ctx.lineTo(x, y2); ctx.stroke();
+		ctx.setLineDash([]);
+		const head = 12; const sign = Math.sign(y2 - y1);
+		ctx.beginPath();
+		ctx.moveTo(x, y2);
+		ctx.lineTo(x - 7, y2 - head * sign); ctx.lineTo(x + 7, y2 - head * sign);
+		ctx.fill(); ctx.restore();
+	}
+
+	function render() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		const w = canvas.clientWidth, h = canvas.clientHeight;
+		const cx = w/2, cy = h/2;
+
+		ctx.save();
+		ctx.translate(cx, cy);
+
+		// 主光轴
+		ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+		ctx.beginPath(); ctx.moveTo(-w/2, 0); ctx.lineTo(w/2, 0); ctx.stroke();
+
+		// 焦点刻度
+		const marks = isConvex ? [-2*f, -f, f, 2*f] : [-f, f];
+		marks.forEach(m => {
+			ctx.fillStyle = "rgba(255,255,255,0.4)";
+			ctx.beginPath(); ctx.arc(m, 0, 3, 0, 7); ctx.fill();
+			ctx.fillText(Math.abs(m) === f ? 'F' : '2F', m - 8, 20);
+		});
+
+		const u = Math.abs(obj.x);
+		const focal = isConvex ? f : -f;
+		const v = 1 / (1/focal - 1/u);
+		const M = -v / u;
+		const imgY = M * obj.y;
+		const isReal = v > 0;
+
+		// --- 物理光路渲染 ---
+		ctx.lineWidth = 1.5;
+
+		// 1. 平行光轴光线
+		ctx.strokeStyle = '#008aff';
+		ctx.beginPath(); ctx.moveTo(obj.x, obj.y); ctx.lineTo(0, obj.y); ctx.stroke();
+		// 折射部分
+		const slope1 = (isConvex ? (0 - obj.y)/f : (obj.y - 0)/f);
+		ctx.beginPath(); ctx.moveTo(0, obj.y); ctx.lineTo(w/2, obj.y + slope1 * (w/2)); ctx.stroke();
+		// 反向延长线 (虚像)
+		if (!isReal) {
+			ctx.save(); ctx.setLineDash([5,5]);
+			ctx.beginPath(); ctx.moveTo(0, obj.y); ctx.lineTo(focal, 0); ctx.stroke();
+			ctx.restore();
+		}
+
+		// 2. 过光心光线
+		ctx.strokeStyle = '#ff4a4a';
+		ctx.beginPath(); ctx.moveTo(obj.x, obj.y); ctx.lineTo(w/2, (w/2 / obj.x) * obj.y); ctx.stroke();
+		if (!isReal) {
+			ctx.save(); ctx.setLineDash([5,5]);
+			ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(v, imgY); ctx.stroke();
+			ctx.restore();
+		}
+
+		// 3. 过焦点光线 (仅凸透镜)
+		if (isConvex) {
+			ctx.strokeStyle = '#00ff88';
+			ctx.beginPath(); ctx.moveTo(obj.x, obj.y);
+			const midY = (obj.y / (obj.x + f)) * f;
+			ctx.lineTo(0, midY); ctx.lineTo(w/2, midY); ctx.stroke();
+			if(!isReal) {
+				ctx.save(); ctx.setLineDash([5,5]);
+				ctx.beginPath(); ctx.moveTo(obj.x, obj.y); ctx.lineTo(-focal, 0); ctx.stroke();
+				ctx.restore();
+			}
+		}
+
+		// 绘制透镜符号 (铺满高度)
+		ctx.save();
+		ctx.strokeStyle = '#4A9EFF'; ctx.lineWidth = 3;
+		const lh = h; // 铺满整个Canvas
+		ctx.beginPath(); ctx.moveTo(0, -lh/2); ctx.lineTo(0, lh/2); ctx.stroke();
+		const arrow = 15;
+		ctx.beginPath();
+		if (isConvex) {
+			ctx.moveTo(-arrow, -lh/2 + arrow); ctx.lineTo(0, -lh/2); ctx.lineTo(arrow, -lh/2 + arrow);
+			ctx.moveTo(-arrow, lh/2 - arrow); ctx.lineTo(0, lh/2); ctx.lineTo(arrow, lh/2 - arrow);
+		} else {
+			ctx.moveTo(-arrow, -lh/2); ctx.lineTo(0, -lh/2 + arrow); ctx.lineTo(arrow, -lh/2);
+			ctx.moveTo(-arrow, lh/2); ctx.lineTo(0, lh/2 - arrow); ctx.lineTo(arrow, lh/2);
+		}
+		ctx.stroke(); ctx.restore();
+
+		// 绘制物与像
+		drawArrow(obj.x, 0, obj.y, '#F0F04A', false);
+		if (!isNaN(v) && Math.abs(v) < 5000) {
+			drawArrow(v, 0, imgY, '#4A9EFF', !isReal);
+			updateUI(u, v, M);
+		}
+
+		ctx.restore();
+		requestAnimationFrame(render);
+	}
+
+	function updateUI(u, v, M) {
+		let type = isConvex ? "凸透镜" : "凹透镜";
+		infoBadge.innerText = type + (v > 0 ? " (实像)" : " (虚像)");
+		document.getElementById('stat-u').innerText = `物距 u: ${Math.round(u)}`;
+		document.getElementById('stat-v').innerText = `像距 v: ${Math.round(v)}`;
+		document.getElementById('stat-m').innerText = `倍率 M: ${Math.abs(M).toFixed(2)}x`;
+	}
+
+	fSlider.oninput = (e) => f = parseInt(e.target.value);
+	document.getElementById('convex-btn').onclick = function() { isConvex = true; this.classList.add('active'); document.getElementById('concave-btn').classList.remove('active'); };
+	document.getElementById('concave-btn').onclick = function() { isConvex = false; this.classList.add('active'); document.getElementById('convex-btn').classList.remove('active'); };
+
+	render();
+</script>
+</body>
+</html>
