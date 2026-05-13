@@ -30,14 +30,6 @@
 </head>
 <body>
 
-<header class="body_header">
-	<a href="/index.html" class="body_header_anchor not-link">
-		<img class="body_header_logo protected-media" src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
-		<h1 class="body_header_title" data-i18n="title-storage">Hayneko's blog | Storage List</h1>
-	</a>
-
-</header>
-
 <!-- No data-i18n (translate table) provided -->
 <main>
 	<h2 class="storage_list_title">Storage List</h2>
@@ -46,7 +38,9 @@
 		<h3 class="storage_list_menu_title">Game Storage</h3>
 		<li class="storage_list_menu_item">
 			<a href="/medias/files/games/PVP.zip" target="_blank" rel="noopener noreferrer">Minecraft 1.21.1 (Java Edition) PvP Map (with datapack inside) (updated on 2026-1-27) (Not longer available)</a>
-			<a href="/medias/files/games/1.21.1_command.zip" target="_blank" rel="noopener noreferrer">Minecraft 1.21.1 (Java Edition) PvP Map Full Map (updated on 2026-2-7)</a>
+		</li>
+		<li class="storage_list_menu_item">
+			<a href="/medias/files/games/1.21.1_command.zip" target="_blank" rel="noopener noreferrer">Minecraft 1.21.1 (Java Edition) PvP Map Full Map (updated on 2026-2-7) (Not longer available)</a>
 		</li>
 	</menu>
 
@@ -66,128 +60,6 @@
 
 
 
-
-<!-- menu system -->
-<div class="dock_menus">
-	<!-- contact -->
-	<div class="dock_contact-menu" id="dock_contact">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-comment"></i>
-			<span data-i18n="contact">Contact</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li class="dock_menu_option" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/github.com/hayNeko');">
-				<i class="fa-brands fa-github"></i>
-				<span data-i18n="contact-via-github">Contact me via GitHub</span>
-			</li>
-			<li class="dock_menu_option">
-				<i class="fa-brands fa-instagram" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/www.instagram.com/hayneko_dword/');"></i>
-				<span data-i18n="contact-via-instagram">Contact me via Instagram</span>
-			</li>
-		</menu>
-	</div>
-	
-	<!-- language -->
-	<div class="dock_language-menu" id="dock_language">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-globe"></i>
-			<span data-i18n="language">Language</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('en')">
-				<span>English</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-CN')">
-				<span>中文(简体)</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-TW')">
-				<span>中文(繁體)</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('ja')">
-				<span>日本語</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-		</menu>
-	</div>
-
-	<!-- search -->
-	<div class="dock_search-menu" id="dock_search">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-magnifying-glass"></i>
-			<span data-i18n="search">Search</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li>
-				<input id="dock_menu_search_input" type="text" placeholder="Search..." disabled style="cursor:not-allowed;">
-			</li>
-			<li>
-				<button data-i18n="search" disabled style="cursor:not-allowed;">Search (Not Available Yet)</button>
-			</li>
-		</menu>
-	</div>
-
-	<!-- tools -->
-	<div class="dock_tools-menu" id="dock_tools">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-wrench"></i>
-			<span data-i18n="tools">Tools</span>
-		</div>
-		<div class="dock_menu_content">
-			<div class="dock_tools_section">
-				<h3 class="dock_tools_title" data-i18n="simulation">Simulation</h3>
-				<ul class="dock_tools_list">
-					<li><a href="/medias/physics-sim/phy-default/index.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation" class="not-link">Physics Simulation</a></li>
-					<li><a href="/medias/physics-sim/phy-newton-second-law/index.html" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation-newton-second-law" class="not-link">Physics Simulation (Newton Second Law)</a></li>
-				</ul>
-				<h3 class="dock_tools_title" data-i18n="docs">Useful Docs</h3>
-				<ul class="dock_tools_list">
-					<li><a href="/medias/files/docs/i386.pdf" target="_blank" rel="noopener noreferrer" data-i18n="docs-i386" class="not-link">INTEL 80386 PROGRAMMER'S REFERENCE MANUAL 1986</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<!-- friendly links -->
-	<div class="dock_friendly-links-menu" id="dock_friendly-links">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-link"></i>
-			<span data-i18n="friendly-links">Friendly Links</span>
-		</div>
-		<menu class="dock_menu_content">
-			<!-- <li class="dock_menu_option" onclick="javascript:;">
-				<a href="#" target="_blank" rel="noopener noreferrer" data-i18n="friendly-link-1">Friendly Link 1</a>
-			</li> -->
-			<li><p data-i18n="no-friendly-link">No friendly links available at the moment. Contact me to add your link.</p></li>
-		</menu>
-	</div>
-
-</div>
-<!-- end menu system -->
-
-
-
-<!-- dock -->
-<nav class="dock">
-	<figure class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
-		<img src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-	</figure>
-
-	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
-	<p class="dock_boxes" id="album" data-i18n-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
-	<p class="dock_boxes" id="storage" data-i18n-tooltip="storage" onclick="javascript:HandleDockClickEvent_Storage();"><i class="fa-solid fa-box-archive"></i></p>
-	<p class="dock_boxes" id="friendly-links" data-i18n-tooltip="friendly-links" onclick="javascript:HandleDockClickEvent_FriendlyLinks(event);"><i class="fa-solid fa-link"></i></p>
-	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
-	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact(event);"><i class="fa-solid fa-comment"></i></p>
-	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language(event);"><i class="fa-solid fa-globe"></i></p>
-	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch-theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
-	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
-	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools(event);"><i class="fa-solid fa-wrench"></i></p>
-
-</nav>
-<!-- end dock -->
 </body>
 <!-- DOM loaded -->
 <script>
@@ -206,6 +78,8 @@
 	});
 </script>
 <!-- end DOM loaded -->
+
+<script src="/medias/scripts/GlobalElements.js"></script>
 
 <!-- service worker -->
 <script>
@@ -227,25 +101,11 @@ if ('serviceWorker' in navigator) {
 
 <!-- end service worker -->
 
-<!-- dock avatar particle -->
 <script src="/medias/scripts/CreateParticle.js"></script>
-<!-- end dock avatar particle -->
-
-<!-- dock links handler -->
 <script src="/medias/scripts/DockInitializer.js"></script>
-<!-- end dock links handler -->
-
-<!-- language switcher -->
 <script src="/medias/scripts/LanguageSwitcher.js"></script>
-<!-- end language switcher -->
-
-<!-- theme switcher -->
 <script src="/medias/scripts/ThemeSwitcher.js"></script>
-<!-- end theme switcher -->
-
-<!-- menu system -->
 <script src="/medias/scripts/DockMenuSystem.js"></script>
-<!-- end menu system -->
 
 <!-- title -->
 <script>

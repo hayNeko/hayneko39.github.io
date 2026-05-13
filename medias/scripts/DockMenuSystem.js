@@ -65,24 +65,56 @@ function ToggleMenu(menuId) {
 			const menuFinalX = window.innerWidth / 2;
 			const menuFinalY = dockRect.top - 110;
 			
-			// 计算从按钮到菜单最终位置的相对位移
-			const offsetX = (buttonCenterX - menuFinalX) / 2;
-			const offsetY = (buttonCenterY - menuFinalY) / 2;
+			// 计算从按钮到菜单中心的位移（用于展开起点）
+			const offsetX = (buttonCenterX - menuFinalX);
+			const offsetY = (buttonCenterY - menuFinalY);
 			
-			// 设置CSS变量用于动画起点
-			menu.style.setProperty('--menu-pop-origin', 
-				`translate(calc(-50% + ${offsetX}px), ${offsetY}px)`);
+			// 设置CSS变量用于动画起点（菜单从icon位置缩放到中心）
+			menu.style.setProperty('--menu-pop-origin-x', `${offsetX}px`);
+			menu.style.setProperty('--menu-pop-origin-y', `${offsetY}px`);
 		}
 		
 		// 显示菜单并添加动画
 		menu.style.visibility = 'visible';
 		menu.style.display = 'block';
 		
-		// 延迟添加show类，确保animation生效
-		setTimeout(() => {
-			menu.classList.add('show');
-			menu.style.opacity = '1';
-		}, 10);
+		// 创建图标克隆并动画到菜单左上角
+		if (button && dock) {
+			const buttonRect = button.getBoundingClientRect();
+			const dockRect = dock.getBoundingClientRect();
+			const clone = button.cloneNode(true);
+			clone.id = '';
+			clone.style.position = 'fixed';
+			clone.style.left = buttonRect.left + 'px';
+			clone.style.top = buttonRect.top + 'px';
+			clone.style.width = buttonRect.width + 'px';
+			clone.style.height = buttonRect.height + 'px';
+			clone.style.zIndex = '2000';
+			clone.style.margin = '0';
+			clone.style.padding = '0';
+			clone.style.pointerEvents = 'none';
+			clone.classList.add('moving-clone');
+			document.body.appendChild(clone);
+			
+			// 菜单最终显示的位置（中心对齐，用于icon克隆移动目标）
+			const menuCenterX = window.innerWidth / 2;
+			const menuContainerWidth = Math.min(window.innerWidth * 0.35, 500);
+			const menuLeft = menuCenterX - menuContainerWidth / 2 + 16; // 16px是菜单内padding
+			const menuTop = dockRect.top - 110;
+			
+			// 计算从按钮位置到菜单左上角的移动距离
+			const moveX = menuLeft - buttonRect.left;
+			const moveY = menuTop - buttonRect.top;
+			clone.style.setProperty('--clone-move-x', `${moveX}px`);
+			clone.style.setProperty('--clone-move-y', `${moveY}px`);
+			
+			// 立即添加动画类，不延迟
+			clone.classList.add('animate-move');
+		}
+		
+		// 立即添加show类给菜单，与icon动画同步
+		menu.classList.add('show');
+		menu.style.opacity = '1';
 		
 		// 如果是语言菜单，更新选中状态
 		if (menuId === 'dock_language') {
@@ -121,6 +153,12 @@ function CloseAllDockMenus() {
 		}
 	});
 	dock_active_menu = null;
+	
+	// 移除图标克隆 - 立即删除（动画已完成）
+	const clones = document.querySelectorAll('.moving-clone');
+	clones.forEach(clone => {
+		clone.remove();
+	});
 }
 
 // 设置语言

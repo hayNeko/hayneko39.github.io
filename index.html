@@ -29,14 +29,6 @@
 </head>
 <body>
 
-<header class="body_header">
-	<a href="/index.html" class="body_header_anchor not-link">
-		<img class="body_header_logo protected-media" src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" />
-		<h1 class="body_header_title" data-i18n="title">Hayneko's blog</h1>
-	</a>
-
-	<button class="body_header_menu_login-button" id="body_header_menu_login-button" data-i18n="login" onclick="javascript:ToggleMenu('dock_menu_header_login-menu');">Login</button>
-</header>
 <main>
 	<!-- <h1 style="display:flex;justify-content:center;align-items:center;min-height:100vh;color:red;font-size:64px;text-align:center;" data-i18n="construction">NEW SITE IS UNDER CONSTRUCTION</h1> -->
 
@@ -60,166 +52,11 @@
 			<span class="info_section_text-value" data-i18n="info_games_content">Minecraft, Genshin Impact</span>
 		</section>
 	</aside>
-	
-
 
 </main>
 
-<footer class="body_footer">
-	<p class="body_footer_text" data-i18n="body_footer_text-0">Hayneko. Created on Jan 10, 2026.</p>
-	<p class="body_footer_text" data-i18n="body_footer_text-1">This site has been refactored 4 times.</p>
-
-	<a href="https://github.com/hayNeko" target="_blank" class="body_footer_link"><i class="fa-brands fa-github"></i>GitHub</a>
-
-</footer>
-
-
-<!-- menu system -->
-<div class="dock_menus">
-	<!-- contact -->
-	<div class="dock_contact-menu" id="dock_contact">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-comment"></i>
-			<span data-i18n="contact">Contact</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li class="dock_menu_option" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/github.com/hayNeko');">
-				<i class="fa-brands fa-github"></i>
-				<span data-i18n="contact-via-github">Contact me via GitHub</span>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:HandleDockClickEvent_Contact_Via('https:\/\/www.instagram.com/hayneko_dword/');">
-				<i class="fa-brands fa-instagram"></i>
-				<span data-i18n="contact-via-instagram">Contact me via Instagram</span>
-			</li>
-		</menu>
-	</div>
-	
-	<!-- language -->
-	<div class="dock_language-menu" id="dock_language">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-globe"></i>
-			<span data-i18n="language">Language</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('en');window.location.reload();">
-				<span>English</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-CN');window.location.reload();">
-				<span>中文(简体)</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('zh-TW');window.location.reload();">
-				<span>中文(繁體)</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-			<li class="dock_menu_option" onclick="javascript:SetLanguage('ja');window.location.reload();">
-				<span>日本語</span>
-				<i class="fa-solid fa-check check-icon"></i>
-			</li>
-		</menu>
-	</div>
-
-	<!-- search -->
-	<div class="dock_search-menu" id="dock_search">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-magnifying-glass"></i>
-			<span data-i18n="search">Search</span>
-		</div>
-		<menu class="dock_menu_content">
-			<li>
-				<input id="dock_menu_search_input" type="text" placeholder="Search..." disabled style="cursor:not-allowed;">
-			</li>
-			<li>
-				<button data-i18n="search" disabled style="cursor:not-allowed;">Search (Not Available Yet)</button>
-			</li>
-		</menu>
-	</div>
-
-	<!-- tools -->
-	<div class="dock_tools-menu" id="dock_tools">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-wrench"></i>
-			<span data-i18n="tools">Tools</span>
-		</div>
-		<div class="dock_menu_content">
-			<div class="dock_tools_section">
-				<h3 class="dock_tools_title" data-i18n="simulation">Simulation</h3>
-				<ul class="dock_tools_list">
-					<li><a href="/pages/physics-sim/phy-default/" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation" class="not-link">Physics Simulation</a></li>
-					<li><a href="/pages/physics-sim/phy-ntlaw2/" target="_blank" rel="noopener noreferrer" data-i18n="physics-simulation-newton-second-law" class="not-link">Physics Simulation (Newton Second Law)</a></li>
-				</ul>
-				<h3 class="dock_tools_title" data-i18n="docs">Useful Docs</h3>
-				<ul class="dock_tools_list">
-					<li><a href="/medias/i386.pdf" target="_blank" rel="noopener noreferrer" data-i18n="docs-i386" class="not-link">INTEL 80386 PROGRAMMER'S REFERENCE MANUAL 1986</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<!-- friendly links -->
-	<div class="dock_friendly-links-menu" id="dock_friendly-links">
-		<div class="dock_menu_header">
-			<i class="fa-solid fa-link"></i>
-			<span data-i18n="friendly-links">Friendly Links</span>
-		</div>
-		<menu class="dock_menu_content">
-			<!-- <li class="dock_menu_option" onclick="javascript:;">
-				<a href="#" target="_blank" rel="noopener noreferrer" data-i18n="friendly-link-1">Friendly Link 1</a>
-			</li> -->
-			<li><p data-i18n="no-friendly-link">No friendly links available at the moment. Contact me to add your link.</p></li>
-		</menu>
-	</div>
-
-</div>
-<!-- end menu system -->
-
-<!-- login modal -->
-
-<!-- end login modal -->
-
-<!-- dock -->
-<nav class="dock">
-	<figure class="dock_avatar" id="avatar" onclick="javascript:HandleDockClickEvent_EmmitParticle();">
-		<img src="/medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-	</figure>
-
-	<p class="dock_boxes" id="home" data-i18n-tooltip="home" onclick="javascript:HandleDockClickEvent_Home();"><i class="fa-solid fa-house"></i></p>
-	<p class="dock_boxes" id="album" data-i18n-tooltip="album" onclick="javascript:HandleDockClickEvent_Album();"><i class="fa-solid fa-image"></i></p>
-	<p class="dock_boxes" id="storage" data-i18n-tooltip="storage" onclick="javascript:HandleDockClickEvent_Storage();"><i class="fa-solid fa-box-archive"></i></p>
-	<p class="dock_boxes" id="friendly-links" data-i18n-tooltip="friendly-links" onclick="javascript:HandleDockClickEvent_FriendlyLinks(event);"><i class="fa-solid fa-link"></i></p>
-	<p class="dock_boxes" id="projects" data-i18n-tooltip="projects" onclick="javascript:HandleDockClickEvent_Projects();"><i class="fa-solid fa-code"></i></p>
-	<p class="dock_boxes" id="contact" data-i18n-tooltip="contact" onclick="javascript:HandleDockClickEvent_Contact(event);"><i class="fa-solid fa-comment"></i></p>
-	<p class="dock_boxes" id="language" data-i18n-tooltip="language" onclick="javascript:HandleDockClickEvent_Language(event);"><i class="fa-solid fa-globe"></i></p>
-	<p class="dock_boxes" id="theme" data-i18n-tooltip="switch-theme" onclick="javascript:HandleDockClickEvent_Theme();"><i class="fa-solid fa-moon"></i></p>
-	<p class="dock_boxes" id="search" data-i18n-tooltip="search" onclick="javascript:HandleDockClickEvent_Search(event);"><i class="fa-solid fa-magnifying-glass"></i></p>
-	<p class="dock_boxes" id="tools" data-i18n-tooltip="tools" onclick="javascript:HandleDockClickEvent_Tools(event);"><i class="fa-solid fa-wrench"></i></p>
-
-</nav>
-<!-- end dock -->
-
-<!-- waifu -->
-
-<!-- <div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" class="live2d"></canvas>
-    <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
-    </div>
-</div> -->
-
-<!-- end waifu -->
-
-
 </body>
-
-<script src="/medias/scripts/GeneralPages.js"></script>
+<script src="/medias/scripts/GlobalElements.js"></script>
 
 <!-- DOM loaded -->
 <script>
@@ -256,19 +93,14 @@ if ('serviceWorker' in navigator) {
 	});
 }
 </script>
-
 <!-- end service worker -->
-<!-- dock links handler -->
+
 <script src="/medias/scripts/CreateParticle.js"></script>
 <script src="/medias/scripts/LanguageSwitcher.js"></script>
 <script src="/medias/scripts/ThemeSwitcher.js"></script>
 <script src="/medias/scripts/DockMenuSystem.js"></script>
 <script src="/medias/scripts/DockInitializer.js"></script>
-<!-- end dock links handler -->
-
-<!-- fontawesome -->
 <script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
-<!-- end fontawesome -->
 
 
 

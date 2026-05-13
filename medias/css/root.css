@@ -120,7 +120,11 @@ a:not(.not-link) {
 }
 
 ::-webkit-scrollbar {
-	display: none;
+	width: 10px;
+	height: 10px;
+	background-color: var(--sidebar-bg-color);
+	color: var(--text-color-primary);
+
 }
 
 .theme-transition-overlay {

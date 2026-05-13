@@ -4,24 +4,40 @@
 	<title>Force vs Motion Simulation</title>
 	<style>
 		@import url("root-theme-colors.css");
+		* {
+			margin: 0;
+			padding: 0;
+		}
 		body {
 			font-family: sans-serif;
-			padding: 20px;
-			background-color: var(--bg-primary);
-			color: var(--text-primary);
+			color: var(--text-color-primary);
 		}
 		canvas {
 			border: 1px solid #333;
-			background: var(--bg-secondary);
+			background: var(--dock-bg-color);
 		}
 		.controls {
 			margin-top: 10px;
 		}
+		.controls label {
+			font-weight: bold;
+			color: var(--text-color-primary);
+			margin-bottom: 5px;
+			display: inline-block;
+		}
 		.readout {
 			margin-top: 10px;
 			font-family: monospace;
+			background: var(--dock-menu-bg-color);
+			color: var(--text-color-primary);
+			padding: 10px;
+			width: fit-content;
+			
 		}
 	</style>
+	<link rel="stylesheet" href="/medias/css/dock.css">
+	<link rel="stylesheet" href="/medias/css/main-page.css">
+	<link rel="stylesheet" href="/medias/css/index.css">
 </head>
 <body>
 	<h3>力學大神模擬：力與運動的關係 (F = ma)</h3>
@@ -47,7 +63,7 @@
 	<h3>公式1</h3>
 	<!-- <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" rowspacing="3pt"><mtr><mtd><mi>v</mi></mtd><mtd><mi></mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>a</mi><mi>t</mi></mtd></mtr><mtr><mtd><msup><mi>v</mi><mn>2</mn></msup></mtd><mtd><mi></mi><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>s</mi></mtd></mtr><mtr><mtd><mi>a</mi></mtd><mtd><mi></mi><mo>=</mo><mfrac><mrow><mi>v</mi><mo>−</mo><mi>u</mi></mrow><mi>t</mi></mfrac></mtd></mtr><mtr><mtd><mi>s</mi></mtd><mtd><mi></mi><mo>=</mo><mi>u</mi><mi>t</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd><mi>s</mi></mtd><mtd><mi></mi><mo>=</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo stretchy="false">)</mo><mi>t</mi></mrow><mn>2</mn></mfrac></mtd></mtr></mtable></math> -->
 
-	<img src="/medias/picures/QianJianTec1764155459272.jpg" width="500">
+	<img src="/medias/picures/QianJianTec1764155459272.jpg" width="240">
 
 	<h3>公式2</h3>
 
@@ -161,4 +177,11 @@
 		requestAnimationFrame(update);
 	</script>
 </body>
+<script src="/medias/scripts/GlobalElements.js"></script>
+<script src="/medias/scripts/CreateParticle.js"></script>
+<script src="/medias/scripts/LanguageSwitcher.js"></script>
+<script src="/medias/scripts/ThemeSwitcher.js"></script>
+<script src="/medias/scripts/DockMenuSystem.js"></script>
+<script src="/medias/scripts/DockInitializer.js"></script>
+<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
 </html>
