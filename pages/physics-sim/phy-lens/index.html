@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
-	<title>光学实验室 v2.2 - Hayneko's Blog</title>
+	<title>Lens | Hayneko's Blog</title>
 	<link rel="stylesheet" href="/medias/css/index.css">
 	<link rel="stylesheet" href="/medias/css/root.css">
 	<link rel="stylesheet" href="/medias/css/dock.css">
@@ -247,7 +247,11 @@
 		// 反向延长线 (虚像)
 		if (!isReal) {
 			ctx.save(); ctx.setLineDash([5,5]);
-			ctx.beginPath(); ctx.moveTo(0, obj.y); ctx.lineTo(focal, 0); ctx.stroke();
+			if (isConvex) {
+				ctx.beginPath(); ctx.moveTo(0, obj.y); ctx.lineTo(v, imgY); ctx.stroke();
+			} else {
+				ctx.beginPath(); ctx.moveTo(0, obj.y); ctx.lineTo(focal, 0); ctx.stroke();
+			}
 			ctx.restore();
 		}
 
@@ -265,7 +269,7 @@
 			ctx.strokeStyle = '#00ff88';
 			ctx.beginPath(); ctx.moveTo(obj.x, obj.y);
 			const midY = (obj.y / (obj.x + f)) * f;
-			ctx.lineTo(0, midY); ctx.lineTo(w/2, midY); ctx.stroke();
+			ctx.lineTo(0, midY); ctx.lineTo(w/2, midY); ctx.stroke();   // green
 			if(!isReal) {
 				ctx.save(); ctx.setLineDash([5,5]);
 				ctx.beginPath(); ctx.moveTo(obj.x, obj.y); ctx.lineTo(-focal, 0); ctx.stroke();
@@ -291,7 +295,7 @@
 
 		// 绘制物与像
 		drawArrow(obj.x, 0, obj.y, '#F0F04A', false);
-		if (!isNaN(v) && Math.abs(v) < 5000) {
+		if (!isNaN(v) && Math.abs(v) < 500000) {
 			drawArrow(v, 0, imgY, '#4A9EFF', !isReal);
 			updateUI(u, v, M);
 		}
@@ -312,6 +316,7 @@
 	document.getElementById('convex-btn').onclick = function() { isConvex = true; this.classList.add('active'); document.getElementById('concave-btn').classList.remove('active'); };
 	document.getElementById('concave-btn').onclick = function() { isConvex = false; this.classList.add('active'); document.getElementById('convex-btn').classList.remove('active'); };
 
+	// setInterval(render, 1000/30);
 	render();
 </script>
 </body>
